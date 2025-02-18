@@ -1,4 +1,3 @@
-import React from "react";
 import "./HorizontalScroll.css"; // Import the CSS file for styles
 
 const Horizontalscroll = () => {

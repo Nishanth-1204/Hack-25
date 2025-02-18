@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+#nav-title {
+  color: white;
+  font-size: clamp(1.0625rem, -0.3438rem + 4.5vw, 2.1875rem);
+  background-image: linear-gradient(rgb(188, 97, 248), rgb(94, 210, 249));
+  color: transparent;
+  background-clip: text;
+}
+
+.header {
+  z-index: 10000;
+  background-color: black;
+  max-width: 100%;
+  width: 100%;
+}
+
+.navbar {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+}
+.registerbtn {
+  font-family: "Varela Round", serif;
+  font-weight: bold;
+  font-size: clamp(0.9375rem, 0.5469rem + 1.25vw, 1.25rem);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  max-width: 10%;
+  min-width: 100px;
+  background: linear-gradient(45deg, rgb(168, 40, 254), rgb(7, 193, 255));
+  border-radius: 8px;
+  border: none;
+  color: white;
+}
+.registerbtn:hover {
+  background: linear-gradient(135deg, rgb(7, 193, 255), rgb(168, 40, 254));
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+.registerbtn:active {
+  background: linear-gradient(135deg, rgb(86, 211, 253), rgb(205, 136, 251));
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  transform: translateY(-1px); /* Slight lift effect */
+}

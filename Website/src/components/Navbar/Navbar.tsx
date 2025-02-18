@@ -1,12 +1,19 @@
-import React from "react";
 import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <header className="header">
       <nav className="navbar">
-        <h1 id="nav-title">HackXelerate</h1>
-        <button className="registerbtn" id="register">
+        <h1 onClick={() => navigate("/")} id="nav-title">
+          HackXelerate
+        </h1>
+        <button
+          onClick={() => navigate("/register")}
+          className="registerbtn"
+          id="register"
+        >
           Register
         </button>
       </nav>

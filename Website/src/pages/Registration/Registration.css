@@ -1,0 +1,157 @@
+.register-container {
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.register-registration-container {
+  height: 80vh;
+  max-width: 90%;
+
+  margin: 20px;
+}
+
+.register-h1 {
+  font-size: clamp(2rem, -0.9688rem + 9.5vw, 4.375rem);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60px;
+  background-image: linear-gradient(rgb(188, 97, 248), rgb(94, 210, 249));
+  color: transparent;
+  background-clip: text;
+}
+
+.register-form-group {
+  margin-bottom: 35px;
+}
+
+.register-label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  background-image: linear-gradient(rgb(188, 97, 248), rgb(94, 210, 249));
+  color: transparent;
+  background-clip: text;
+  font-size: clamp(1.375rem, 0.9063rem + 1.5vw, 1.75rem);
+  text-align: left;
+}
+
+.register-input,
+.register-select {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
+}
+
+.register-button {
+  width: 100%;
+  padding: 20px;
+  background-image: linear-gradient(rgb(94, 210, 249), rgb(188, 97, 248));
+  color: white;
+  border-radius: 4px;
+  font-size: 25px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.register-input-file {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 20px;
+}
+
+.register-button:hover {
+  background-color: goldenrod;
+}
+
+.register-member-fields {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.register-member-fields h3 {
+  margin-top: 0;
+  color: #4a148c;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .register-container {
+    padding: 15px;
+  }
+
+  .register-input,
+  .register-select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .register-button {
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 15px;
+  }
+  .register-registration-container {
+    height: 80vh;
+    width: 90%;
+    overflow-y: auto;
+    margin: 20px;
+  }
+  .register-input,
+  .register-select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .register-button {
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .register-container {
+    padding: 15px;
+  }
+
+  .register-input,
+  .register-select {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .register-registration-container {
+    height: 80vh;
+    width: 90%;
+    overflow-y: auto;
+    margin: 20px;
+  }
+  .register-button {
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 15px;
+  }
+}

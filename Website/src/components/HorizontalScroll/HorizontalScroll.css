@@ -35,7 +35,7 @@
 /* Animation for smooth horizontal scrolling */
 @keyframes scroll {
   0% {
-    transform: translateX(0); /* Start from the beginning */
+    transform: translateX(10); /* Start from the beginning */
   }
   100% {
     transform: translateX(
@@ -45,12 +45,12 @@
 }
 @media (max-width: 360px) {
   .scroll-image {
-    width: 60px;
+    width: 190px;
   }
 }
 
 @media (max-width: 412px) {
   .scroll-image {
-    width: 60px;
+    width: 190px;
   }
 }
