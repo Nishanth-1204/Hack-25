@@ -1,0 +1,56 @@
+/* HorizontalScroll.css */
+
+.scroll-container {
+  width: 100%;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.scroll-content {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  animation: scroll 120s linear infinite; /* Continuous scroll animation */
+}
+
+.scroll-content li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 16px; /* Optional: space between images */
+}
+
+/* Updated responsive image scaling */
+.scroll-image {
+  max-width: 400px; /* Increased max-width for better image visibility / / Ensures images scale based on the container */
+  height: auto;
+  padding: 5px;
+  display: inline-block;
+}
+
+/* Animation for smooth horizontal scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Start from the beginning */
+  }
+  100% {
+    transform: translateX(
+      -100%
+    ); /* Move to the left until the entire content scrolls out */
+  }
+}
+@media (max-width: 360px) {
+  .scroll-image {
+    width: 60px;
+  }
+}
+
+@media (max-width: 412px) {
+  .scroll-image {
+    width: 60px;
+  }
+}
