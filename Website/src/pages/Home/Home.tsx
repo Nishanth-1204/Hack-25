@@ -3,6 +3,8 @@ import Schedule from "../Schedule/Schedule.tsx";
 import Countdown from "../../components/Countdown/Countdown.tsx";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+import vid1 from "../../assets/vid1.mp4";
+import video from "../../assets/video.mp4";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,7 +13,7 @@ const Home = () => {
       <div className="container">
         <div className="vidcontainer">
           <video className="vid1" autoPlay muted loop>
-            <source src="/Website/src/assets/vid1.mp4" type="video/mp4" />
+            <source src={vid1} type="video/mp4" />
           </video>
         </div>
         <h1 className="title">HackXelerate'25</h1>
@@ -46,7 +48,7 @@ const Home = () => {
                 playsInline
                 width={"100%"}
               >
-                <source src="/Website/src/assets/video.mp4" type="video/mp4" />
+                <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
