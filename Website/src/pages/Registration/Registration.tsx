@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./registration.css";
+import "./Registration.css";
 import { api } from "../../../utils/api";
 
 interface Member {
