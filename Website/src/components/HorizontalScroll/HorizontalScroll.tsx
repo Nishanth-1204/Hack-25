@@ -88,18 +88,6 @@ const Horizontalscroll: React.FC = () => {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
     >
-      {/* Left Arrow Button for manual scrolling */}
-      <button
-        className="scroll-btn left"
-        onClick={() => {
-          if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollLeft -= scrollAmount;
-          }
-        }}
-      >
-        &#8592;
-      </button>
-
       <ul className="scroll-content">
         {/* List of images */}
         <li>
@@ -174,19 +162,6 @@ const Horizontalscroll: React.FC = () => {
         </li>
         {/* Repeat similar list items for more images */}
       </ul>
-
-      {/* Left Arrow Button for manual scrolling */}
-      <button
-        className="scroll-btn left"
-        onClick={() => {
-          if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollLeft -= scrollAmount;
-          }
-        }}
-      >
-        &#8592;
-      </button>
-      <div></div>
     </div>
   );
 };
