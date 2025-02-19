@@ -2,11 +2,18 @@
 
 .scroll-container {
   width: 100%;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-x: scroll; /* Allow horizontal scrolling */
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
   display: flex;
   justify-content: center;
   position: relative;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
 }
 
 .scroll-content {
@@ -14,7 +21,6 @@
   display: flex;
   padding: 0;
   margin: 0;
-  animation: scroll 120s linear infinite; /* Continuous scroll animation */
 }
 
 .scroll-content li {
@@ -32,17 +38,7 @@
   display: inline-block;
 }
 
-/* Animation for smooth horizontal scrolling */
-@keyframes scroll {
-  0% {
-    transform: translateX(10); /* Start from the beginning */
-  }
-  100% {
-    transform: translateX(
-      -100%
-    ); /* Move to the left until the entire content scrolls out */
-  }
-}
+/* Media queries for smaller screen sizes */
 @media (max-width: 360px) {
   .scroll-image {
     width: 190px;
