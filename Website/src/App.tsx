@@ -5,6 +5,7 @@ import CircleCursor from "./components/CircleCursor";
 import GridBackground from "./components/background/Grid";
 import Register from "./pages/Registration/Registration";
 import { Footer } from "./components/Footer/Footer";
+import Dashboard from "./pages/Admin/Dashboard/Dashboard";
 const App = () => {
   return (
     <BrowserRouter>
