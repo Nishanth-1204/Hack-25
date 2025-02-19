@@ -76,12 +76,13 @@ exports.login = CatchAsync(async (req, res, next) => {
 
 exports.registration = CatchAsync(async (req, res, next) => {
   const { teamName, teamMembers } = req.body;
+  console.log(teamMembers);
   const Registration = await Registation.create({
     teamName,
     uid,
     teamMembers: JSON.parse(teamMembers),
     abstract: req.file.filename,
-  });
+  }).catch((err) => console.log(err));
 
   res.status(200).json({
     status: "success",

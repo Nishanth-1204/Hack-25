@@ -1,6 +1,5 @@
 import Horizontalscroll from "../../components/HorizontalScroll/HorizontalScroll.tsx";
 import Schedule from "../Schedule/Schedule.tsx";
-import { Footer } from "../../components/Footer/Footer.tsx";
 import Countdown from "../../components/Countdown/Countdown.tsx";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";

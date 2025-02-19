@@ -14,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/admin/dash" element={<Dashboard />} />
       </Routes>
       <Footer />
       <CircleCursor />

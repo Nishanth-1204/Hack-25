@@ -7,6 +7,7 @@ interface Member {
   email: string;
   college: string;
   phoneNumber: string;
+  yearOfStudy: string;
   department: string;
 }
 
@@ -40,8 +41,6 @@ const Register: React.FC = () => {
     setMembers(updatedMembers);
   };
 
-  console.log(JSON.stringify(members));
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -66,7 +65,7 @@ const Register: React.FC = () => {
     <div className="register-container">
       <div className="register-registration-container">
         <p className="register-h1">Registration</p>
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="register-form-group">
             <label htmlFor="teamName" className="register-label">
               Team Name:
@@ -107,7 +106,7 @@ const Register: React.FC = () => {
               required
             >
               <option value="">Select</option>
-              {[3, 4, 5, 6].map((num) => (
+              {[1, 3, 4, 5, 6].map((num) => (
                 <option key={num} value={num}>
                   {num}
                 </option>
@@ -119,37 +118,46 @@ const Register: React.FC = () => {
             {members.map((member, index) => (
               <div key={index} className="register-member-fields">
                 <h3>Member {index + 1}</h3>
-                {["name", "email", "college", "phoneNumber", "department"].map(
-                  (field) => (
-                    <div className="register-form-group" key={field}>
-                      <label
-                        htmlFor={`${field}${index}`}
-                        className="register-label"
-                      >
-                        {field.charAt(0).toUpperCase() + field.slice(1)}:
-                      </label>
-                      <input
-                        type="text"
-                        id={`${field}${index}`}
-                        className="register-input"
-                        value={member[field as keyof Member]}
-                        onChange={(e) =>
-                          handleMemberChange(
-                            index,
-                            field as keyof Member,
-                            e.target.value
-                          )
-                        }
-                        required
-                      />
-                    </div>
-                  )
-                )}
+                {[
+                  "name",
+                  "email",
+                  "phoneNumber",
+                  "yearOfStudy",
+                  "department",
+                  "college",
+                ].map((field) => (
+                  <div className="register-form-group" key={field}>
+                    <label
+                      htmlFor={`${field}${index}`}
+                      className="register-label"
+                    >
+                      {field.charAt(0).toUpperCase() + field.slice(1)}:
+                    </label>
+                    <input
+                      type="text"
+                      id={`${field}${index}`}
+                      className="register-input"
+                      value={member[field as keyof Member]}
+                      onChange={(e) =>
+                        handleMemberChange(
+                          index,
+                          field as keyof Member,
+                          e.target.value
+                        )
+                      }
+                      required
+                    />
+                  </div>
+                ))}
               </div>
             ))}
           </div>
 
-          <button type="submit" className="register-button">
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            className="register-button"
+          >
             Register
           </button>
         </form>

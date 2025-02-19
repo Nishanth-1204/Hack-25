@@ -3,7 +3,6 @@ import "./HorizontalScroll.css"; // Import the CSS file for styles
 
 const Horizontalscroll: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const scrollAmount = 200; // Amount to scroll per mouse drag or click (in pixels)
 
   // Handle mouse drag to scroll
   const [isMouseDown, setIsMouseDown] = useState<boolean>(false);

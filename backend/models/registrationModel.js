@@ -30,6 +30,10 @@ const registrationSchema = new mongoose.Schema({
           type: String,
           required: [true, "Provide department"],
         },
+        yearOfStudy: {
+          type: String,
+          required: [true, "Provide year of study"],
+        },
         phoneNumber: {
           type: String,
           required: [true, "Provide phone number"],
