@@ -186,6 +186,7 @@ const Horizontalscroll: React.FC = () => {
       >
         &#8592;
       </button>
+      <div></div>
     </div>
   );
 };
