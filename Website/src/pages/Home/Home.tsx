@@ -23,7 +23,7 @@ const Home = () => {
           </button>
         </div>
         <Schedule />
-        <div className="video-container">
+        {/* <div className="video-container">
           <video
             className="video"
             autoPlay
@@ -35,7 +35,27 @@ const Home = () => {
             <source src="./src/assets/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+        </div> */}
+        <div className="mini-tv-container">
+          <div className="mini-tv-frame">
+            <div className="mini-tv-screen">
+              <video
+                className="mini-tv-video"
+                autoPlay
+                muted
+                loop
+                playsInline
+                width={"100%"}
+              >
+                <source src="./src/assets/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <div className="mini-tv-glow"></div>
+          </div>
         </div>
+
         <Horizontalscroll />
       </div>
       {/* <Footer /> */}
