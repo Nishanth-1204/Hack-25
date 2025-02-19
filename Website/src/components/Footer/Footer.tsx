@@ -29,32 +29,16 @@ export const Footer = () => {
             </p>
             <div className="social-icons">
               <a href="#">
-                <img
-                  src="./src/components/Footer/facebook.png"
-                  width="30"
-                  height="30"
-                />
+                <img src="/facebook.png" width="30" height="30" />
               </a>
               <a href="#">
-                <img
-                  src=".\src\components\Footer\twitter.png"
-                  width="30"
-                  height="30"
-                />
+                <img src="/twitter.png" width="30" height="30" />
               </a>
               <a href="#">
-                <img
-                  src=".\src\components\Footer\instagram.png"
-                  width="30"
-                  height="30"
-                />
+                <img src="/instagram.png" width="30" height="30" />
               </a>
               <a href="#">
-                <img
-                  src=".\src\components\Footer\github.png"
-                  width="30"
-                  height="30"
-                />
+                <img src="/github.png" width="30" height="30" />
               </a>
             </div>
           </div>
