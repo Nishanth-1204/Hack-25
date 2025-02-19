@@ -8,11 +8,10 @@ const router = express.Router();
 router.post("/login", authController.login);
 router.post("/signup", authController.singup);
 
-router.post(
-  "/registration",
-  authController.uploadAbstract,
-  authController.registration
-);
+router
+  .route("/registration")
+  .get(authController.getAllRegistration)
+  .post(authController.uploadAbstract, authController.registration);
 
 router.route("/").get(userController.getAllUsers);
 

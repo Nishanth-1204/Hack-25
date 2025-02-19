@@ -88,3 +88,12 @@ exports.registration = CatchAsync(async (req, res, next) => {
     data: Registration,
   });
 });
+
+exports.getAllRegistration = CatchAsync(async (req, res, next) => {
+  const Registration = await Registation.find({});
+
+  res.status(200).json({
+    status: "success",
+    data: Registration,
+  });
+});
