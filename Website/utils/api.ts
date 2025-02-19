@@ -1,5 +1,5 @@
 import axios from "axios"
 
 export const api = axios.create({
-    baseURL: "http://localhost:8000/api/v1",
+    baseURL: "https://hack-25-backend-ca2a6k7zh-nishanth-bots-projects.vercel.app/api/v1",
 })
