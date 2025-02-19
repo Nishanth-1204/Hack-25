@@ -1,3 +1,147 @@
 .schedule {
   color: white;
 }
+.schedule-container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.schedule-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffde59;
+  text-shadow: 0 0 10px #ffde59, 0 0 20px #ffde59;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.date-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.date-button {
+  background: transparent;
+  border: 2px solid #390d3c;
+  color: #ffde59;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.date-button.active {
+  background: #ffde59;
+  color: black;
+  border-color: #ffde59;
+}
+
+.date-button:hover {
+  background: #ffde59;
+  color: black;
+}
+
+.search-box {
+  background-color: transparent;
+  width: 50%;
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 1rem;
+  border: 2px solid #ffde59;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  outline: none;
+  box-shadow: 0 0 10px #ffde59;
+}
+
+.search-box::placeholder {
+  color: #999;
+}
+
+.schedule-box {
+  border: 2px solid #ffde59;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 0 20px #ffde59;
+}
+
+.day-title {
+  color: #ffde59;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.schedule-list {
+  margin-top: 20px;
+}
+
+.schedule-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.animate-glow {
+  animation: glow-effect 1.2s infinite alternate;
+}
+
+/* @keyframes glow-effect {
+    0% {
+      box-shadow: 0 0 2px #00ff99;
+    }
+    100% {
+      box-shadow: 0 0 8px #00ff99;
+    }
+  }
+   */
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .date-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-box {
+    width: 90%;
+  }
+
+  .schedule-box {
+    width: 90%;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+}
