@@ -91,70 +91,70 @@ const Horizontalscroll: React.FC = () => {
         {/* List of images */}
         <li>
           <img
-            src="./src/assets/images/your-image-9.jpg"
+            src="/images/your-image-9.jpg"
             alt="img-1"
             className="scroll-image"
           />
         </li>
         <li>
           <img
-            src="./src/assets/images/your-image-2.jpg"
+            src="/images/your-image-2.jpg"
             alt="img-2"
             className="scroll-image"
           />
         </li>
         <li>
           <img
-            src="./src/assets/images/your-image-3.jpg"
+            src="/images/your-image-3.jpg"
             alt="img-3"
             className="scroll-image"
           />
         </li>
         <li>
           <img
-            src="./src/assets/images/your-image-4.jpg"
+            src="/images/your-image-4.jpg"
             alt="img-4"
             className="scroll-image"
           />
         </li>
         <li>
           <img
-            src="./src/assets/images/your-image-5.jpg"
+            src="/images/your-image-5.jpg"
             alt="img-5"
             className="scroll-image"
           />
         </li>
         <li>
           <img
-            src="./src/assets/images/your-image-6.jpg"
+            src="/images/your-image-6.jpg"
             alt="img-6"
             className="scroll-image"
           />
         </li>
         <li>
           <img
-            src="./src/assets/images/your-image-8.jpg"
+            src="/images/your-image-8.jpg"
             alt="img-7"
             className="scroll-image"
           />
         </li>
         <li>
           <img
-            src="./src/assets/images/your-image-9.jpg"
+            src="/images/your-image-9.jpg"
             alt="img-8"
             className="scroll-image"
           />
         </li>
         <li>
           <img
-            src="./src/assets/images/your-image-13.jpg"
+            src="/images/your-image-13.jpg"
             alt="img-9"
             className="scroll-image"
           />
         </li>
         <li>
           <img
-            src="./src/assets/images/your-image-11.jpg"
+            src="/images/your-image-11.jpg"
             alt="img-10"
             className="scroll-image"
           />
