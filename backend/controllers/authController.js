@@ -5,6 +5,7 @@ const CatchAsync = require("../utils/CatchAsync");
 const AppError = require("../utils/appError");
 const generateUID = require("../utils/generateUID");
 const jwt = require("jsonwebtoken");
+const uploadToGoogleDrive = require("../utils/googleDriveUploader");
 
 const uid = generateUID();
 
@@ -76,7 +77,13 @@ exports.login = CatchAsync(async (req, res, next) => {
 
 exports.registration = CatchAsync(async (req, res, next) => {
   const { teamName, teamMembers } = req.body;
-  console.log(teamMembers);
+
+  const fileUrl = uploadToGoogleDrive(req.file);
+
+  if (!fileUrl) {
+    return next(new AppError("Error uploading file to Google Drive", 500));
+  }
+
   const Registration = await Registation.create({
     teamName,
     uid,

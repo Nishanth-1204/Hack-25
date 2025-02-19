@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "hackxelerate",
+  "private_key_id": "11c1ccff412a89dec4b558dac0758a35b80315c1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCZme07DBP/nbeX\nxQGM5aCJ+MxW2fEDPUNyMdFS1GX0XZG4Rt/djtLoOvbhMhPljH09SPg1D0bDsonR\nGPrF6h5Ae2vYxw91JLSq21Q2P1UGv93Z1KvVwJtW+zIWOMlay6FLWP79WwjAc+IZ\nknvVzMP0RFC9ygyWY8ifBU/pdqjQVZ9RfG4z5DevTc5/qgtasxgQ2CB7pZ6Nbh96\n8D4kL1fK47aSE0nRB+JEMBTymrUcPD6S6kCheLCLpQOQiVibO8tCaECHvthjpBP8\naN4+KnkXm7OHk7Up1aiwFF5Xb5A/AiPM2SMdZR/dmy9MneW5jwFDid2Ii7ezedux\nLebStljbAgMBAAECggEAAp4yAeihyqCIiYitDxa21sMr0GskhXac2Kxqseu21SRn\nIGns1NzjUVv36zysRCRR2iKNQHJDNYCsgqjXVVo5K8Yuv2IdLFT001irpcUMkPHi\nOR071IfU3fWoE+Lh469Gz37z0aOkkYsoFmF9xNYZnOcxLRrtff6zY6p2gzcnh213\nZ9023n0Jkx0aOga3xmxbOkx4J9j4OfOTuSAEtUQPH/AfZ5aR9W6GPVQa4QcPXVtt\nd2moDZWelxoDZxsiPje3Bzz4EF8pt6RwsYbLUQAMWjFQXLET3j2kukvt6rP6HbJN\nDT9bzIgdPjG4JY66Qu5acMOi3jYAHk1QDgCP1D/a4QKBgQDKZ/QzZysJkHNsa4C8\npHQc+gneUQvRjZRccAs/ee48jkTSqwxFDf5xAC4LwLLy1cRi0mPFcKSOYn8ox+DN\n3xMtiIpftQP8iBLveqJZpcfjmFGWjsJX3gnHwxBOy8Bv5oxAfIDJVJ90bJeXf4Ks\n0pf/RDffgEjhkyMXaGVd+fdycQKBgQDCRcBw9J9/N63X2btYE36Ljg0uJ5e4nria\nxjK6EtDx++8Gzg1PedDotHV/bJc5ldBdR0ITxd/IJ6JqdKdQ5lagQgDf1A2TBXjF\nob/oVoZ8O0xHJAh4RFhgXdqHfmpph85pQvVU/xvlIB7Jszy5jau/9w1SLaX/ih+u\nNdlNwpZOCwKBgQCFgaQV88rzeBBqR06XH3JnWpX/yj2db2GYx17j860szDqhKqnh\nMqXOK2wz3FssycvL0zJ0HSSttlJht9WUdbvUoOeE0YVboPW8eIt1zl/Ww7WtNWUD\nSDXzSbsL/mFkbhG8x2K7adHznV0wVK8BB7eybHDeP2PTRpYy7m1OW37YQQKBgDuv\nwHMzxPkJ+0Aw5e0meB+aMhR3F5ciNKdgs18VvtpJw+M8VTyQuY11PBA9Ja0MiSrP\nZM68YYeWHcFFO86QJhcwkCI0fUMpUDSwAEz6oHD0qvfEa1G/9cMNssEkJr9reRBA\nAS3u/vwDRVJE3ihIDXd6CL6xxalgH2Gfq7bHTPSHAoGAKj9yeaV4bl4EZpNf288p\nS6osldPP9Dwb3FrbNtwHMMU5yvjI60KiQ6Tb1SlBoar2TAnAtw7iPDGWCBHsAfzN\nfAO7xwf80chAmfB/GQR7Nu4wnXTF0ucRO2wnVByLWhovZn2J0ODjjLNPz3KWaiAZ\nPL0VtX0enxhn+tb+gTJNiPs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "driveuploader@hackxelerate.iam.gserviceaccount.com",
+  "client_id": "113833321042135290269",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/driveuploader%40hackxelerate.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
