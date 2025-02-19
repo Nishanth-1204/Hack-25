@@ -8,7 +8,11 @@ const globalErrorHandler = require("./controllers/errorController");
 
 // Global Middlewares
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://hack-25-sigma.vercel.app",
+  })
+);
 app.use(express.json());
 app.use(express.static("public"));
 
