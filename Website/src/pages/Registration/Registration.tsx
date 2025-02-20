@@ -44,20 +44,27 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const form = new FormData();
-    form.append("teamName", teamName);
-    form.append("abstract", ideaFile!);
-    form.append("teamMembers", JSON.stringify(members));
+    if (!localStorage.getItem("teamName")) {
+      const form = new FormData();
+      form.append("teamName", teamName);
+      form.append("abstract", ideaFile!);
+      form.append("teamMembers", JSON.stringify(members));
 
-    try {
-      await api
-        .post("/users/registration", form, {
-          headers: { "Content-Type": "multipart/form-data" },
-        })
-        .then(() => alert("Registration Successful!"));
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Registration Failed!");
+      try {
+        await api
+          .post("/users/registration", form, {
+            headers: { "Content-Type": "multipart/form-data" },
+          })
+          .then(() => {
+            localStorage.setItem("teamName", teamName);
+            alert("Registration successful");
+          });
+      } catch (error: any) {
+        const errMsg = error.response.data.message;
+        alert(errMsg);
+      }
+    } else {
+      alert("You have already registered!");
     }
   };
 
@@ -82,7 +89,7 @@ const Register: React.FC = () => {
 
           <div className="register-form-group">
             <label htmlFor="ideaFile" className="register-label">
-              Upload Idea (PDF):
+              Abstract (PDF):
             </label>
             <input
               type="file"
@@ -106,7 +113,7 @@ const Register: React.FC = () => {
               required
             >
               <option value="">Select</option>
-              {[1, 3, 4, 5, 6].map((num) => (
+              {[3, 4, 5, 6].map((num) => (
                 <option key={num} value={num}>
                   {num}
                 </option>
