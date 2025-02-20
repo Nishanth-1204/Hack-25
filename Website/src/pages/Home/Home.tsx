@@ -1,8 +1,10 @@
 import Horizontalscroll from "../../components/HorizontalScroll/HorizontalScroll.tsx";
 import Schedule from "../Schedule/Schedule.tsx";
 import Countdown from "../../components/Countdown/Countdown.tsx";
+import PrizeSection from "../../components/PriceSection/PriceSection.tsx";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+import FAQSection from "../../components/faq/FAQsection.tsx";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -22,19 +24,7 @@ const Home = () => {
           </button>
         </div>
         <Schedule />
-        {/* <div className="video-container">
-          <video
-            className="video"
-            autoPlay
-            muted
-            loop
-            playsInline
-            width="60%" // Make video responsive
-          >
-            <source src="./src/assets/video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div> */}
+        <PrizeSection />
         <div className="mini-tv-container">
           <div className="mini-tv-frame">
             <div className="mini-tv-screen">
@@ -56,6 +46,7 @@ const Home = () => {
         </div>
 
         <Horizontalscroll />
+        <FAQSection />
       </div>
       {/* <Footer /> */}
     </>

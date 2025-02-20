@@ -2,7 +2,7 @@
 #nav-title {
   color: white;
   font-size: clamp(1.5rem, 0.875rem + 2vw, 2rem);
-  background-image: linear-gradient(rgb(188, 97, 248), rgb(94, 210, 249));
+  background: linear-gradient(45deg, rgb(168, 40, 254), gold);
   color: transparent;
   background-clip: text;
   user-select: none;
@@ -31,13 +31,13 @@
   width: 100%;
   max-width: 10%;
   min-width: 100px;
-  background: linear-gradient(45deg, rgb(168, 40, 254), rgb(7, 193, 255));
+  background: linear-gradient(45deg, rgb(168, 40, 254), gold);
   border-radius: 8px;
   border: none;
   color: white;
 }
 .registerbtn:hover {
-  background: linear-gradient(135deg, rgb(7, 193, 255), rgb(168, 40, 254));
+  background: linear-gradient(135deg, rgb(255, 215, 1), rgb(168, 40, 254));
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
   transform: translateY(-1px); /* Slight lift effect */
 }

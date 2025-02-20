@@ -6,7 +6,7 @@ interface Member {
   name: string;
   email: string;
   college: string;
-  phoneNumber: string;
+  phoneNumber: number;
   yearOfStudy: string;
   department: string;
 }
@@ -27,17 +27,27 @@ const Register: React.FC = () => {
     const value = parseInt(e.target.value);
     setNumMembers(value);
     setMembers(
-      Array(value).fill({ name: "", college: "", phone: "", department: "" })
+      Array(value).fill({
+        name: "",
+        email: "",
+        college: "",
+        phoneNumber: "",
+        yearOfStudy: "",
+        department: "",
+      })
     );
   };
 
   const handleMemberChange = (
     index: number,
     field: keyof Member,
-    value: string
+    value: string | number
   ) => {
     const updatedMembers = [...members];
-    updatedMembers[index] = { ...updatedMembers[index], [field]: value };
+    updatedMembers[index] = {
+      ...updatedMembers[index],
+      [field]: field === "phoneNumber" ? Number(value) || "" : value,
+    };
     setMembers(updatedMembers);
   };
 
@@ -46,7 +56,7 @@ const Register: React.FC = () => {
 
     const form = new FormData();
     form.append("teamName", teamName);
-    form.append("abstract", ideaFile!);
+    if (ideaFile) form.append("abstract", ideaFile);
     form.append("teamMembers", JSON.stringify(members));
 
     try {
@@ -133,20 +143,51 @@ const Register: React.FC = () => {
                     >
                       {field.charAt(0).toUpperCase() + field.slice(1)}:
                     </label>
-                    <input
-                      type="text"
-                      id={`${field}${index}`}
-                      className="register-input"
-                      value={member[field as keyof Member]}
-                      onChange={(e) =>
-                        handleMemberChange(
-                          index,
-                          field as keyof Member,
-                          e.target.value
-                        )
-                      }
-                      required
-                    />
+                    {field === "yearOfStudy" ? (
+                      <select
+                        id={`${field}${index}`}
+                        className="register-select"
+                        value={member[field as keyof Member]}
+                        onChange={(e) =>
+                          handleMemberChange(
+                            index,
+                            field as keyof Member,
+                            e.target.value
+                          )
+                        }
+                        required
+                      >
+                        <option value="">Select</option>
+                        {[
+                          "1st Year",
+                          "2nd Year",
+                          "3rd Year",
+                          "4th Year",
+                          "5th Year",
+                        ].map((year) => (
+                          <option key={year} value={year}>
+                            {year}
+                          </option>
+                        ))}
+                      </select>
+                    ) : (
+                      <input
+                        type={field === "phoneNumber" ? "tel" : "text"}
+                        id={`${field}${index}`}
+                        className="register-input"
+                        value={member[field as keyof Member]}
+                        onChange={(e) =>
+                          handleMemberChange(
+                            index,
+                            field as keyof Member,
+                            field === "phoneNumber"
+                              ? Number(e.target.value) || 0
+                              : e.target.value
+                          )
+                        }
+                        required
+                      />
+                    )}
                   </div>
                 ))}
               </div>
