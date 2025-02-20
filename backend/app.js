@@ -10,8 +10,9 @@ const globalErrorHandler = require("./controllers/errorController");
 const app = express();
 app.use(
   cors({
-    origin: "https://hack-25-sigma.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: ["https://hack-25-pi.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
