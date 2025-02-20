@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import { Schema, model } from "mongoose";
 
-const registrationSchema = new mongoose.Schema({
+const registrationSchema = new Schema({
   teamName: {
     type: String,
     required: [true, "Provide a team name"],
@@ -54,4 +54,4 @@ const registrationSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Registration", registrationSchema);
+export default model("Registration", registrationSchema);

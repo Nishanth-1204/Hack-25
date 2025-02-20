@@ -1,9 +1,5 @@
-const generateUID = () => {
-  id = "KPR";
-  for (let i = 0; i < 3; i++) {
-    id += Math.floor(Math.random() * 10);
-  }
-  return id;
+export const generateUID = () => {
+  const prefix = "KPR";
+  const randomNumber = Math.floor(100 + Math.random() * 900);
+  return `${prefix}${randomNumber}`;
 };
-
-module.exports = generateUID;

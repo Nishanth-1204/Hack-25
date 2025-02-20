@@ -1,6 +1,6 @@
 import axios from "axios"
 
 export const api = axios.create({
-    baseURL: "https://hack-25-9y9e.onrender.com/api/v1",
+    baseURL: import.meta.env.VITE_BACKEND_API,
     withCredentials: true,
 })

@@ -1,4 +1,4 @@
-const AppError = require("../utils/appError");
+import AppError from "../utils/appError.js";
 
 const sendErrorDev = (err, res) => {
   res.status(err.statusCode).json({
@@ -41,7 +41,7 @@ const sendErroProd = (err, res) => {
   }
 };
 
-module.exports = (err, req, res, next) => {
+export default (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   err.status = err.status || "error";
 

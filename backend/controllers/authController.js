@@ -1,20 +1,28 @@
-const multer = require("multer");
-const User = require("../models/userModel");
-const Registation = require("../models/registrationModel");
-const CatchAsync = require("../utils/CatchAsync");
-const AppError = require("../utils/appError");
-const generateUID = require("../utils/generateUID");
-const jwt = require("jsonwebtoken");
+import { google } from "googleapis";
+import catchAsync from "../utils/catchAsync.js";
+import multer from "multer";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import Registration from "../models/registrationModel.js";
+import { generateUID } from "../utils/generateUID.js";
+import AppError from "../utils/appError.js";
+
+// Define __dirname for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "public/pdf/users");
+    const uploadPath = path.join(__dirname, "../public/pdf");
+    cb(null, uploadPath);
   },
   filename: (req, file, cb) => {
     const uid = generateUID();
     req.uid = uid;
-    const ext = file.mimetype.split("/")[1];
-    cb(null, `user-${uid}.${ext}`);
+    const extension = path.extname(file.originalname);
+    const filename = `user-${uid}${extension}`;
+    cb(null, filename);
   },
 });
 
@@ -22,79 +30,78 @@ const multerFilter = (req, file, cb) => {
   if (file.mimetype === "application/pdf") {
     cb(null, true);
   } else {
-    cb(new AppError("Not a PDF! Please upload only PDF files", 400), false);
+    cb(new AppError("Not a PDF! Please upload only PDF files.", 400), false);
   }
 };
 
 const upload = multer({ storage: multerStorage, fileFilter: multerFilter });
 
-exports.uploadAbstract = upload.single("abstract");
+const auth = new google.auth.GoogleAuth({
+  keyFile: path.resolve(__dirname, "../apikeys.json"),
+  scopes: ["https://www.googleapis.com/auth/drive.file"],
+});
 
-const signToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRES_IN,
-  });
+const drive = google.drive({ version: "v3", auth });
+const folderId = "1nMCMiKoDpAcCzGKm8U2L9_qZgHDn3LdK";
+
+const uploadAbstractToDrive = async (filePath, fileName) => {
+  try {
+    // Upload file to Google Drive
+    const response = await drive.files.create({
+      resource: {
+        name: fileName,
+        parents: [folderId],
+      },
+      media: {
+        mimeType: "application/pdf",
+        body: fs.createReadStream(filePath),
+      },
+    });
+
+    // Set file permissions
+    await drive.permissions.create({
+      fileId: response.data.id,
+      requestBody: {
+        role: "reader",
+        type: "anyone",
+      },
+    });
+
+    // Generate and return file link
+    const fileLink = `https://drive.google.com/file/d/${response.data.id}/view?usp=sharing`;
+    return fileLink;
+  } catch (error) {
+    console.error("Drive Upload Error:", error);
+    throw new Error("Failed to upload file to Google Drive.");
+  }
 };
 
-exports.singup = CatchAsync(async (req, res, next) => {
-  const user = await User.create({
-    email: req.body.email,
-    password: req.body.password,
-    passwordConfirm: req.body.passwordConfirm,
-    phoneNumber: req.body.phoneNumber,
-  });
-
-  const token = signToken(user._id);
-
-  res.status(200).json({
-    status: "success",
-    token,
-    data: user,
-  });
-});
-
-exports.login = CatchAsync(async (req, res, next) => {
-  const { email, password } = req.body;
-
-  if (!email || !password) {
-    return next(new AppError("Please provide email and password", 400));
+const registration = catchAsync(async (req, res, next) => {
+  if (!req.file) {
+    return res.status(400).json({ message: "Please upload a PDF file." });
   }
 
-  const user = await User.findOne({ email }).select("+password");
+  // Upload file to Google Drive
+  const abstractLink = await uploadAbstractToDrive(
+    req.file.path,
+    `abstract-${req.uid}.pdf`
+  );
 
-  if (user && !(await user.correctPassword(password, user.password))) {
-    return next(new AppError("Incorrect email or password", 401));
-  }
-
-  const token = signToken(user._id);
-
-  res.status(200).json({
-    status: "success",
-    token,
-  });
-});
-
-exports.registration = CatchAsync(async (req, res, next) => {
-  const { teamName, teamMembers } = req.body;
-
-  const Registration = await Registation.create({
-    teamName,
+  // Create registration entry
+  const register = await Registration.create({
+    teamName: req.body.teamName,
     uid: req.uid,
-    teamMembers: JSON.parse(teamMembers),
-    abstract: req.file.filename,
+    teamMembers: JSON.parse(req.body.teamMembers),
+    abstract: abstractLink,
+  }).catch((error) => {
+    console.error("Registration Error:", error);
+    throw new Error("Failed to create registration entry.");
   });
 
-  res.status(200).json({
+  return res.status(200).json({
     status: "success",
-    data: Registration,
+    data: register,
   });
 });
 
-exports.getAllRegistration = CatchAsync(async (req, res, next) => {
-  const Registration = await Registation.find({});
-
-  res.status(200).json({
-    status: "success",
-    data: Registration,
-  });
-});
+export default { registration, uploadAbstract: upload.single("abstract") };
