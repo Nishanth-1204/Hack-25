@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Registration.css";
 import { api } from "../../../utils/api";
+import { useNavigate } from "react-router-dom";
 
 interface Member {
   name: string;
@@ -16,6 +17,8 @@ const Register: React.FC = () => {
   const [numMembers, setNumMembers] = useState<number>(0);
   const [members, setMembers] = useState<Member[]>([]);
   const [ideaFile, setIdeaFile] = useState<File | null>(null);
+
+  const navigate = useNavigate();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -44,7 +47,7 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!localStorage.getItem("teamName")) {
+    if (localStorage.getItem("registered") !== "true") {
       const form = new FormData();
       form.append("teamName", teamName);
       form.append("abstract", ideaFile!);
@@ -56,7 +59,8 @@ const Register: React.FC = () => {
             headers: { "Content-Type": "multipart/form-data" },
           })
           .then(() => {
-            localStorage.setItem("teamName", teamName);
+            localStorage.setItem("registered", "true");
+            navigate("/");
             alert("Registration successful");
           });
       } catch (error: any) {
