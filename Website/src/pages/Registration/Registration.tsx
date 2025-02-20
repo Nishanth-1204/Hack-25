@@ -62,8 +62,8 @@ const Register: React.FC = () => {
       !teamName ||
       !ideaFile ||
       numMembers === 0 ||
-      members.length !== 0 ||
-      members.forEach(
+      members.length === 0 ||
+      members.some(
         (member) =>
           !member.name ||
           !member.email ||
