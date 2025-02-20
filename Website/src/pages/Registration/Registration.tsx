@@ -64,7 +64,7 @@ const Register: React.FC = () => {
             alert("Registration successful");
           });
       } catch (error: any) {
-        const errMsg = error.response.data.message;
+        const errMsg = error.response;
         alert(errMsg);
       }
     } else {
