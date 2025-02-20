@@ -61,6 +61,8 @@ const Register: React.FC = () => {
     if (
       !teamName ||
       !ideaFile ||
+      numMembers === 0 ||
+      members.length !== 0 ||
       members.forEach(
         (member) =>
           !member.name ||
@@ -97,6 +99,7 @@ const Register: React.FC = () => {
             setLoading(false);
           });
       } catch (error: any) {
+        setLoading(false);
         console.log(error);
       }
     } else {
