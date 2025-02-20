@@ -71,6 +71,7 @@ const Register: React.FC = () => {
           !member.department
       )
     ) {
+      setLoading(false);
       alert("Please fill in all the fields.");
     }
 
@@ -99,6 +100,7 @@ const Register: React.FC = () => {
         console.log(error);
       }
     } else {
+      setLoading(false);
       alert("You have already registered!");
     }
   };
