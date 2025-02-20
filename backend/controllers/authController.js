@@ -6,8 +6,6 @@ const AppError = require("../utils/appError");
 const generateUID = require("../utils/generateUID");
 const jwt = require("jsonwebtoken");
 
-const uid = generateUID();
-
 const multerStorage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/pdf/users");
@@ -76,6 +74,8 @@ exports.login = CatchAsync(async (req, res, next) => {
 
 exports.registration = CatchAsync(async (req, res, next) => {
   const { teamName, teamMembers } = req.body;
+
+  const uid = generateUID();
 
   const Registration = await Registation.create({
     teamName,
