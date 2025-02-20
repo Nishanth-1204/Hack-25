@@ -56,6 +56,9 @@ const Register: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!teamName || members.length === 0 || !ideaFile) {
+      alert("Please fill in all the fields.");
+    }
 
     const form = new FormData();
     form.append("teamName", teamName);
