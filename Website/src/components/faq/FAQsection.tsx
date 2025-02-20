@@ -1,5 +1,5 @@
 import React from "react";
-import "./FAQSection.css";
+import "./FAQsection.css";
 
 interface FAQ {
   question: string;
