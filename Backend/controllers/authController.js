@@ -37,6 +37,7 @@ const multerFilter = (req, file, cb) => {
 const upload = multer({ storage: multerStorage, fileFilter: multerFilter });
 
 const auth = new google.auth.GoogleAuth({
+  keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS,
   scopes: ["https://www.googleapis.com/auth/drive.file"],
 });
 
