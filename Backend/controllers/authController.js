@@ -37,12 +37,12 @@ const multerFilter = (req, file, cb) => {
 const upload = multer({ storage: multerStorage, fileFilter: multerFilter });
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: path.resolve(__dirname, "../apikeys.json"),
+  keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS,
   scopes: ["https://www.googleapis.com/auth/drive.file"],
 });
 
 const drive = google.drive({ version: "v3", auth });
-const folderId = "1nMCMiKoDpAcCzGKm8U2L9_qZgHDn3LdK";
+const folderId = process.env.GOOGLE_FOLDERID;
 
 const uploadAbstractToDrive = async (filePath, fileName) => {
   try {
