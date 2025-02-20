@@ -78,8 +78,7 @@ const Register: React.FC = () => {
             alert("Registration successful");
           });
       } catch (error: any) {
-        const errMsg = error.response;
-        alert(errMsg);
+        console.log(error);
       }
     } else {
       alert("You have already registered!");
