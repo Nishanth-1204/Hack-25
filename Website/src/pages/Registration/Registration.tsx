@@ -130,7 +130,7 @@ const Register: React.FC = () => {
               required
             >
               <option value="">Select</option>
-              {[1, 3, 4, 5, 6].map((num) => (
+              {[3, 4, 5, 6].map((num) => (
                 <option key={num} value={num}>
                   {num}
                 </option>
