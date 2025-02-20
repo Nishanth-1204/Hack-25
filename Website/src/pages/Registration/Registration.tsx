@@ -56,8 +56,8 @@ const Register: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    setLoading(true);
     e.preventDefault();
+    setLoading(true);
     if (
       !teamName ||
       !ideaFile ||
