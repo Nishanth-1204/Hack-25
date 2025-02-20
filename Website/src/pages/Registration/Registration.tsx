@@ -172,21 +172,17 @@ const Register: React.FC = () => {
                         required
                       >
                         <option value="">Select</option>
-                        {[
-                          "1st Year",
-                          "2nd Year",
-                          "3rd Year",
-                          "4th Year",
-                          "5th Year",
-                        ].map((year) => (
-                          <option key={year} value={year}>
-                            {year}
-                          </option>
-                        ))}
+                        {["1st Year", "2nd Year", "3rd Year", "4th Year"].map(
+                          (year) => (
+                            <option key={year} value={year}>
+                              {year}
+                            </option>
+                          )
+                        )}
                       </select>
                     ) : (
                       <input
-                        type={field === "phoneNumber" ? "tel" : "text"}
+                        type={field === "phoneNumber" ? "" : "text"}
                         id={`${field}${index}`}
                         className="register-input"
                         value={member[field as keyof Member]}
