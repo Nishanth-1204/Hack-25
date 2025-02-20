@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Registration.css";
 import { api } from "../../../utils/api";
+import { useNavigate } from "react-router-dom";
 
 interface Member {
   name: string;
@@ -16,6 +17,8 @@ const Register: React.FC = () => {
   const [numMembers, setNumMembers] = useState<number>(0);
   const [members, setMembers] = useState<Member[]>([]);
   const [ideaFile, setIdeaFile] = useState<File | null>(null);
+
+  const navigate = useNavigate();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -58,16 +61,28 @@ const Register: React.FC = () => {
     form.append("teamName", teamName);
     if (ideaFile) form.append("abstract", ideaFile);
     form.append("teamMembers", JSON.stringify(members));
+    if (localStorage.getItem("registered") !== "true") {
+      const form = new FormData();
+      form.append("teamName", teamName);
+      form.append("abstract", ideaFile!);
+      form.append("teamMembers", JSON.stringify(members));
 
-    try {
-      await api
-        .post("/users/registration", form, {
-          headers: { "Content-Type": "multipart/form-data" },
-        })
-        .then(() => alert("Registration Successful!"));
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Registration Failed!");
+      try {
+        await api
+          .post("/users/registration", form, {
+            headers: { "Content-Type": "multipart/form-data" },
+          })
+          .then(() => {
+            localStorage.setItem("registered", "true");
+            navigate("/");
+            alert("Registration successful");
+          });
+      } catch (error: any) {
+        const errMsg = error.response;
+        alert(errMsg);
+      }
+    } else {
+      alert("You have already registered!");
     }
   };
 
@@ -92,7 +107,7 @@ const Register: React.FC = () => {
 
           <div className="register-form-group">
             <label htmlFor="ideaFile" className="register-label">
-              Upload Idea (PDF):
+              Abstract (PDF):
             </label>
             <input
               type="file"
@@ -116,7 +131,7 @@ const Register: React.FC = () => {
               required
             >
               <option value="">Select</option>
-              {[1, 3, 4, 5, 6].map((num) => (
+              {[3, 4, 5, 6].map((num) => (
                 <option key={num} value={num}>
                   {num}
                 </option>
