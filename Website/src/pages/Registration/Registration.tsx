@@ -71,15 +71,11 @@ const Register: React.FC = () => {
       form.append("teamMembers", JSON.stringify(members));
 
       try {
-        await api
-          .post("/users/registration", form, {
-            headers: { "Content-Type": "multipart/form-data" },
-          })
-          .then(() => {
-            localStorage.setItem("registered", "true");
-            navigate("/");
-            alert("Registration successful");
-          });
+        await api.post("/users/registration", form, {}).then(() => {
+          localStorage.setItem("registered", "true");
+          navigate("/");
+          alert("Registration successful");
+        });
       } catch (error: any) {
         console.log(error);
       }
