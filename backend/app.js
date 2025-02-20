@@ -10,7 +10,7 @@ const globalErrorHandler = require("./controllers/errorController");
 const app = express();
 app.use(
   cors({
-    origin: "https://hack-25-sigma.vercel.app",
+    origin: ["http://localhost:5173", "https://hack-25-sigma.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -24,12 +24,6 @@ if (process.env.NODE_ENV === "development") {
 
 // Routes
 app.use("/api/v1/users", userRouter);
-
-app.get("/pdf/:filename", (req, res) => {
-  const filename = req.params.filename;
-  const filePath = path.join(__dirname, "public/pdf/users", filename);
-  res.sendFile(filePath);
-});
 
 // Global Error Handler
 app.all("*", (req, res, next) => {
