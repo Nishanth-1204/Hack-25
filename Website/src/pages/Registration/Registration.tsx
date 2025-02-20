@@ -13,6 +13,7 @@ interface Member {
 }
 
 const Register: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(false);
   const [teamName, setTeamName] = useState<string>("");
   const [numMembers, setNumMembers] = useState<number>(0);
   const [members, setMembers] = useState<Member[]>([]);
@@ -55,6 +56,7 @@ const Register: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    setLoading(true);
     e.preventDefault();
     if (!teamName || members.length === 0 || !ideaFile) {
       alert("Please fill in all the fields.");
@@ -71,11 +73,16 @@ const Register: React.FC = () => {
       form.append("teamMembers", JSON.stringify(members));
 
       try {
-        await api.post("/users/registration", form, {}).then(() => {
-          localStorage.setItem("registered", "true");
-          navigate("/");
-          alert("Registration successful");
-        });
+        await api
+          .post("/users/registration", form, {})
+          .then(() => {
+            localStorage.setItem("registered", "true");
+            navigate("/");
+            alert("Registration successful");
+          })
+          .then(() => {
+            setLoading(false);
+          });
       } catch (error: any) {
         console.log(error);
       }
@@ -129,7 +136,7 @@ const Register: React.FC = () => {
               required
             >
               <option value="">Select</option>
-              {[1, 3, 4, 5, 6].map((num) => (
+              {[3, 4, 5, 6].map((num) => (
                 <option key={num} value={num}>
                   {num}
                 </option>
@@ -208,7 +215,7 @@ const Register: React.FC = () => {
             type="submit"
             className="register-button"
           >
-            Register
+            {loading ? "Loading..." : "Register"}
           </button>
         </form>
       </div>
