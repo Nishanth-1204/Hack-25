@@ -11,6 +11,8 @@ const multerStorage = multer.diskStorage({
     cb(null, "public/pdf/users");
   },
   filename: (req, file, cb) => {
+    const uid = generateUID();
+    req.uid = uid;
     const ext = file.mimetype.split("/")[1];
     cb(null, `user-${uid}.${ext}`);
   },
@@ -75,11 +77,9 @@ exports.login = CatchAsync(async (req, res, next) => {
 exports.registration = CatchAsync(async (req, res, next) => {
   const { teamName, teamMembers } = req.body;
 
-  const uid = generateUID();
-
   const Registration = await Registation.create({
     teamName,
-    uid,
+    uid: req.uid,
     teamMembers: JSON.parse(teamMembers),
     abstract: req.file.filename,
   });
