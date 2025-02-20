@@ -58,7 +58,19 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     setLoading(true);
     e.preventDefault();
-    if (!teamName || members.length === 0 || !ideaFile) {
+    if (
+      !teamName ||
+      !ideaFile ||
+      members.forEach(
+        (member) =>
+          !member.name ||
+          !member.email ||
+          !member.college ||
+          !member.phoneNumber ||
+          !member.yearOfStudy ||
+          !member.department
+      )
+    ) {
       alert("Please fill in all the fields.");
     }
 
@@ -214,6 +226,7 @@ const Register: React.FC = () => {
             onClick={handleSubmit}
             type="submit"
             className="register-button"
+            disabled={loading}
           >
             {loading ? "Loading..." : "Register"}
           </button>
