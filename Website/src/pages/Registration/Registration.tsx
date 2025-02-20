@@ -74,7 +74,7 @@ const Register: React.FC = () => {
       )
     ) {
       setLoading(false);
-      alert("Please fill in all the fields.");
+      return alert("Please fill in all the fields.");
     }
 
     const form = new FormData();
