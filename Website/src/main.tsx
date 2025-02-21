@@ -7,7 +7,7 @@ reactRouter.createRoot(document.getElementById("root")!).render(<App />);
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("/service-worker.js")
+      .register("/service-worker.ts")
       .then(() =>
         console.log("✅ Service Worker registered for media preloading.")
       )
