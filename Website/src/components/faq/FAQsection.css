@@ -37,7 +37,7 @@
   padding: 20px;
   width: 48%;
   max-width: 500px;
-  box-shadow: 0 0 10px 2px #ffd700;
+  box-shadow: 0 0 8px 1px #ffd700;
   transition: transform 0.3s ease-in-out, max-height 0.3s ease;
   overflow: hidden;
 }
