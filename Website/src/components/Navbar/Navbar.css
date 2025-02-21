@@ -57,7 +57,7 @@
 }
 
 /* ===== MOBILE RESPONSIVENESS ===== */
-@media (max-width: 870px) {
+@media (max-width: 912px) {
   /* Show Menu Button */
   .menu-button {
     display: block;
