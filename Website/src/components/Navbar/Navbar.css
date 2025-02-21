@@ -46,3 +46,16 @@
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
   transform: translateY(-1px); /* Slight lift effect */
 }
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  color: #ffffff;
+  font-size: large;
+}
+
+.nav-item:hover {
+  color: gold;
+  cursor: pointer;
+}

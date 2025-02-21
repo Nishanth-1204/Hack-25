@@ -30,18 +30,16 @@ const PrizeSection: React.FC = () => {
         <h1 className="prize-title" style={{ fontSize: "3rem" }}>
           Prizes
         </h1>
-        <h2>
-          Total Prize Pool
-          <h1
-            style={{
-              color: "#ffde59",
-              fontSize: "3rem",
-              fontWeight: "bold",
-            }}
-          >
-            75,000
-          </h1>
-        </h2>
+        <h2>Total Prize Pool</h2>
+        <h1
+          style={{
+            color: "#ffde59",
+            fontSize: "3rem",
+            fontWeight: "bold",
+          }}
+        >
+          75,000
+        </h1>
       </div>
       <div className="prize-container">
         {prizes.map((prize, index) => (

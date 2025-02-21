@@ -10,18 +10,22 @@ const Home = () => {
   return (
     <>
       <div className="container">
-        <div className="vidcontainer">
+        <div id="home" className="vidcontainer">
           <video className="vid1" autoPlay muted loop>
             <source src="/vid1.mp4" type="video/mp4" />
           </video>
         </div>
         <h1 className="title">HackXelerate'25</h1>
-        <div className="count">
+        <div id="countdown" className="count">
           <Countdown />
         </div>
-        <Schedule />
-        <PrizeSection />
-        <div className="mini-tv-container">
+        <div id="schedule">
+          <Schedule />
+        </div>
+        <div id="prizes">
+          <PrizeSection />
+        </div>
+        <div id="gallery" className="mini-tv-container">
           <div className="mini-tv-frame">
             <div className="mini-tv-screen">
               <video
@@ -42,7 +46,9 @@ const Home = () => {
         </div>
 
         <Horizontalscroll />
-        <FAQSection />
+        <div id="faq">
+          <FAQSection />
+        </div>
       </div>
       {/* <Footer /> */}
     </>
