@@ -42,14 +42,6 @@ const Schedule: React.FC = () => {
         ))}
       </div>
 
-      <input
-        type="text"
-        className="search-box"
-        placeholder="Search event..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-
       <div className="schedule-box animate-fade-in">
         <h2 className="day-title">
           Day {Object.keys(scheduleData).indexOf(selectedDate) + 1}
