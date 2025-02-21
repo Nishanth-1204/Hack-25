@@ -16,6 +16,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/admin/dash" element={<Dashboard />} />
       </Routes>
+
       <Footer />
       <CircleCursor />
     </BrowserRouter>

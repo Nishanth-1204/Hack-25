@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
 #nav-title {
   color: white;
   font-size: clamp(1.5rem, 0.875rem + 2vw, 2rem);
@@ -16,12 +17,76 @@
 }
 
 .navbar {
+  width: 100%;
   padding: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 65px;
 }
+
+/* ===== MENU BUTTON (Hidden on Desktop) ===== */
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== NAVIGATION LIST ===== */
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  font-weight: bold;
+  color: white;
+  font-size: large;
+  z-index: 30000;
+  align-items: center;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+  /* Show Menu Button */
+  .menu-button {
+    display: block;
+  }
+
+  /* Hide Nav List by Default */
+  .nav-list {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    background: rgb(19, 19, 19);
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: none;
+  }
+
+  /* Show Nav List When Open */
+  .nav-list.open {
+    display: flex;
+    transform: translateY(0);
+  }
+
+  /* Styling for Nav Items */
+  .nav-item {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .nav-item:hover {
+    background: gold;
+    color: black;
+  }
+}
+
 .registerbtn {
   font-family: "Varela Round", serif;
   font-weight: bold;
@@ -45,17 +110,4 @@
   background: linear-gradient(135deg, rgb(86, 211, 253), rgb(205, 136, 251));
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
   transform: translateY(-1px); /* Slight lift effect */
-}
-
-.nav-list {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  color: #ffffff;
-  font-size: large;
-}
-
-.nav-item:hover {
-  color: gold;
-  cursor: pointer;
 }

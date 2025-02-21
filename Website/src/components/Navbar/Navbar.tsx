@@ -1,13 +1,16 @@
-import "./Navbar.css";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); // Close menu after clicking an item
     }
   };
 
@@ -17,17 +20,18 @@ const Navbar = () => {
         <h1 onClick={() => navigate("/")} id="nav-title">
           HackXelerate
         </h1>
-        <ul className="nav-list">
-          <li
-            className="active nav-item"
-            onClick={() => scrollToSection("home")}
-          >
+
+        {/* Hamburger Menu Button */}
+        <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </button>
+
+        {/* Navigation List - Show/Hide Based on menuOpen */}
+        <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
+          <li className="nav-item" onClick={() => scrollToSection("home")}>
             Home
           </li>
-          <li
-            className="active nav-item"
-            onClick={() => scrollToSection("countdown")}
-          >
+          <li className="nav-item" onClick={() => scrollToSection("countdown")}>
             Countdown
           </li>
           <li className="nav-item" onClick={() => scrollToSection("schedule")}>
@@ -40,7 +44,15 @@ const Navbar = () => {
             Gallery
           </li>
           <li className="nav-item" onClick={() => scrollToSection("faq")}>
-            FAQS
+            FAQs
+          </li>
+          <li>
+            <button
+              onClick={() => navigate("/register")}
+              className="registerbtn"
+            >
+              Register
+            </button>
           </li>
         </ul>
       </nav>
