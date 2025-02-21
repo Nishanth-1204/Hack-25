@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="header">
+    <header className="nav-header">
       <nav className="navbar">
         <h1 onClick={() => navigate("/")} id="nav-title">
           HackXelerate

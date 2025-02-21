@@ -9,9 +9,10 @@
   user-select: none;
 }
 
-.header {
+.nav-header {
+  position: fixed;
   z-index: 10000;
-  background-color: black;
+  background-color: rgb(0, 0, 0, 0.6);
   max-width: 100%;
   width: 100%;
 }
@@ -45,6 +46,14 @@
   font-size: large;
   z-index: 30000;
   align-items: center;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: gold;
 }
 
 /* ===== MOBILE RESPONSIVENESS ===== */
