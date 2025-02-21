@@ -7,26 +7,11 @@ export const Footer = () => {
         <div className="footer-container">
           {/* Left Section */}
           <div className="footer-left">
-            <p>
-              <i className="fas fa-map-marker-alt"></i>
-              <strong>Avinashi- Coimbatore Road, Arasur, Tamil Nadu</strong>
-            </p>
-            <p>
-              <i className="fas fa-phone"></i> 0422 263 5600
-            </p>
-            <p>
-              <i className="fas fa-envelope"></i>{" "}
-              <a href="mailto:info@kpriet.ac.in">info@kpriet.ac.in</a>
-            </p>
-          </div>
-
-          {/* Right Section */}
-          <div className="footer-right">
-            <h3>About the Institute</h3>
-            <p>
+            <h2 className="footer-title">About the Institute</h2>
+            <h3 className="footer-description">
               To become a premier institute of academic excellence by imparting
-              technical, intellectual, and professional skills to students.
-            </p>
+              technical knowledge, intellectual growth, and professional skills.
+            </h3>
             <div className="social-icons">
               <a target="_blank" href="https://www.kpriet.ac.in/">
                 <img src="/website.png" width="30" height="30" />
@@ -43,6 +28,50 @@ export const Footer = () => {
               <a target="_blank" href="https://x.com/KPRIETonline/">
                 <img src="/twitter.png" width="30" height="30" />
               </a>
+            </div>
+          </div>
+
+          {/* Right Section */}
+          <div className="footer-right">
+            <h2>Contact the Organisers:</h2>
+            <div className="contact-info">
+              <div className="contacts">
+                <h3>Team HackXelerate</h3>
+                <span>
+                  <a href="mailto:hackxelerate@gmail.com">
+                    hackxelerate@gmail.com
+                  </a>
+                </span>
+                <p>+91 6382148621</p>
+              </div>
+              <div className="contacts">
+                <h3>Dhanya R S</h3>
+                <span>
+                  <a href="mailto:23cb007@kpriet.ac.in">23cb007@kpriet.ac.in</a>
+                </span>
+                <p>+91 8300451102</p>
+              </div>
+              <div className="contacts">
+                <h3>Sarvesh S</h3>
+                <span>
+                  <a href="mailto:23cb053@kpriet.ac.in">23cb053@kpriet.ac.in</a>
+                </span>
+                <p>+91 7092913333</p>
+              </div>
+              <div className="contacts">
+                <h3>Rethan Kumar C V</h3>
+                <span>
+                  <a href="mailto:23cb040@kpriet.ac.in">23cb040@kpriet.ac.in</a>
+                </span>
+                <p>+91 8778635036</p>
+              </div>
+              <div className="contacts">
+                <h3>DharaniPriya M</h3>
+                <span>
+                  <a href="mailto:22cb013@kpriet.ac.in">22cb013@kpriet.ac.in</a>
+                </span>
+                <p>+91 9360640951</p>
+              </div>
             </div>
           </div>
         </div>
