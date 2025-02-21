@@ -33,7 +33,7 @@ export const Footer = () => {
 
           {/* Right Section */}
           <div className="footer-right">
-            <h2>Contact the Organisers:</h2>
+            <h2>Contact the Organisers</h2>
             <div className="contact-info">
               <div className="contacts">
                 <h3>Team HackXelerate</h3>
