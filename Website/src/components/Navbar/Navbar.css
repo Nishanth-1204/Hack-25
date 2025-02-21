@@ -12,7 +12,7 @@
 .nav-header {
   position: fixed;
   z-index: 10000;
-  background-color: rgb(0, 0, 0, 0.6);
+  background-color: rgb(0, 0, 0, 0.7);
   max-width: 100%;
   width: 100%;
 }
@@ -110,6 +110,11 @@
   border: none;
   color: white;
 }
+
+.regitrationBtn {
+  scale: 1.4;
+}
+
 .registerbtn:hover {
   background: linear-gradient(135deg, rgb(255, 215, 1), rgb(168, 40, 254));
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */

@@ -48,7 +48,9 @@ const Navbar: React.FC = () => {
           </li>
           <li>
             <button
-              onClick={() => navigate("/register")}
+              onClick={() =>
+                window.open("https://unstop.com/o/FpG5D29?lb=GpnkcYYm", "_self")
+              }
               className="registerbtn"
             >
               Register

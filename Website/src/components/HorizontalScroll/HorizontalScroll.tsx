@@ -1,165 +1,107 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./HorizontalScroll.css"; // Import the CSS file for styles
+import "./HorizontalScroll.css";
 
 const Horizontalscroll: React.FC = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const autoScrollInterval = useRef<NodeJS.Timeout | null>(null);
 
-  // Handle mouse drag to scroll
-  const [isMouseDown, setIsMouseDown] = useState<boolean>(false);
-  const [startX, setStartX] = useState<number>(0);
-  const [scrollLeftState, setScrollLeftState] = useState<number>(0);
+  // Start auto-scroll
+  const startAutoScroll = () => {
+    if (autoScrollInterval.current) clearInterval(autoScrollInterval.current);
+    autoScrollInterval.current = setInterval(() => {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollLeft += 1;
+        const scrollWidth = scrollContainerRef.current.scrollWidth / 2;
+        if (scrollContainerRef.current.scrollLeft >= scrollWidth) {
+          scrollContainerRef.current.scrollLeft = 0;
+        }
+      }
+    }, 10);
+  };
 
-  // Auto scroll configuration and looping
-  const scrollSpeed = 1; // Speed of auto scroll
-  const autoScrollIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  // Stop auto-scroll
+  const stopAutoScroll = () => {
+    if (autoScrollInterval.current) clearInterval(autoScrollInterval.current);
+  };
 
   useEffect(() => {
-    if (scrollContainerRef.current) {
-      autoScrollIntervalRef.current = setInterval(() => {
-        if (scrollContainerRef.current) {
-          // If the scroll position is at the end, reset to the beginning
-          if (
-            scrollContainerRef.current.scrollLeft >=
-            scrollContainerRef.current.scrollWidth -
-              scrollContainerRef.current.clientWidth
-          ) {
-            scrollContainerRef.current.scrollLeft = 0;
-          } else {
-            scrollContainerRef.current.scrollLeft += scrollSpeed;
-          }
-        }
-      }, 10); // Adjust this time to control the speed
-    }
-
-    return () => {
-      if (autoScrollIntervalRef.current) {
-        clearInterval(autoScrollIntervalRef.current); // Clean up the interval when the component unmounts
-      }
-    };
+    startAutoScroll();
+    return () => stopAutoScroll();
   }, []);
 
-  // Handle mouse down event to start dragging
+  // Mouse events for manual scroll
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsMouseDown(true);
-    setStartX(e.pageX - (scrollContainerRef.current?.offsetLeft ?? 0));
-    setScrollLeftState(scrollContainerRef.current?.scrollLeft ?? 0);
-  };
-
-  const handleMouseLeave = () => {
-    setIsMouseDown(false);
-  };
-
-  const handleMouseUp = () => {
-    setIsMouseDown(false);
+    setStartX(e.pageX);
+    setScrollLeft(scrollContainerRef.current?.scrollLeft ?? 0);
+    stopAutoScroll();
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isMouseDown || !scrollContainerRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - (scrollContainerRef.current?.offsetLeft ?? 0);
-    const walk = (x - startX) * 2; // Scroll speed multiplier
-    scrollContainerRef.current.scrollLeft = scrollLeftState - walk;
+    const move = e.pageX - startX;
+    scrollContainerRef.current.scrollLeft = scrollLeft - move;
   };
 
-  // Handle touch scroll (for mobile devices)
-  const [touchStartX, setTouchStartX] = useState<number>(0);
+  const handleMouseUp = () => {
+    setIsMouseDown(false);
+    startAutoScroll();
+  };
 
+  // Touch events for mobile scroll
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].pageX);
+    setStartX(e.touches[0].pageX);
+    setScrollLeft(scrollContainerRef.current?.scrollLeft ?? 0);
+    stopAutoScroll();
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (!touchStartX || !scrollContainerRef.current) return;
-    const touchMoveX = e.touches[0].pageX;
-    const moveDistance = touchStartX - touchMoveX;
-    scrollContainerRef.current.scrollLeft += moveDistance;
-    setTouchStartX(touchMoveX); // Update start position
+    if (!scrollContainerRef.current) return;
+    const move = e.touches[0].pageX - startX;
+    scrollContainerRef.current.scrollLeft = scrollLeft - move;
   };
+
+  const handleTouchEnd = () => startAutoScroll();
+
+  // Image list to duplicate for seamless scroll
+  const images = [
+    "/images/your-image-2.jpg",
+    "/images/your-image-3.jpg",
+    "/images/your-image-4.jpg",
+    "/images/your-image-5.jpg",
+    "/images/your-image-6.jpg",
+    "/images/your-image-8.jpg",
+    "/images/your-image-8.jpg",
+    "/images/your-image-9.jpg",
+    "/images/your-image-11.jpg",
+    "/images/your-image-13.jpg",
+  ];
 
   return (
     <div
       className="scroll-container"
       ref={scrollContainerRef}
       onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <ul className="scroll-content">
-        {/* List of images */}
-        <li>
-          <img
-            src="/images/your-image-9.jpg"
-            alt="img-1"
-            className="scroll-image"
-          />
-        </li>
-        <li>
-          <img
-            src="/images/your-image-2.jpg"
-            alt="img-2"
-            className="scroll-image"
-          />
-        </li>
-        <li>
-          <img
-            src="/images/your-image-3.jpg"
-            alt="img-3"
-            className="scroll-image"
-          />
-        </li>
-        <li>
-          <img
-            src="/images/your-image-4.jpg"
-            alt="img-4"
-            className="scroll-image"
-          />
-        </li>
-        <li>
-          <img
-            src="/images/your-image-5.jpg"
-            alt="img-5"
-            className="scroll-image"
-          />
-        </li>
-        <li>
-          <img
-            src="/images/your-image-6.jpg"
-            alt="img-6"
-            className="scroll-image"
-          />
-        </li>
-        <li>
-          <img
-            src="/images/your-image-8.jpg"
-            alt="img-7"
-            className="scroll-image"
-          />
-        </li>
-        <li>
-          <img
-            src="/images/your-image-9.jpg"
-            alt="img-8"
-            className="scroll-image"
-          />
-        </li>
-        <li>
-          <img
-            src="/images/your-image-13.jpg"
-            alt="img-9"
-            className="scroll-image"
-          />
-        </li>
-        <li>
-          <img
-            src="/images/your-image-11.jpg"
-            alt="img-10"
-            className="scroll-image"
-          />
-        </li>
-        {/* Repeat similar list items for more images */}
+        {[...images, ...images].map((src, index) => (
+          <li key={index} className="scroll-item">
+            <img
+              src={src}
+              alt={`Image ${index + 1}`}
+              className="scroll-image"
+            />
+          </li>
+        ))}
       </ul>
     </div>
   );

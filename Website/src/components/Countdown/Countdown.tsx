@@ -66,7 +66,13 @@ const Countdown: React.FC = () => {
           ))}
         </div>
       </section>
-      <button onClick={() => navigate("/register")} className="registerbtn">
+      <button
+        onClick={() => {
+          // navigate("/register")
+          window.open("https://unstop.com/o/FpG5D29?lb=GpnkcYYm", "_self");
+        }}
+        className="registerbtn regitrationBtn"
+      >
         Register
       </button>
     </>

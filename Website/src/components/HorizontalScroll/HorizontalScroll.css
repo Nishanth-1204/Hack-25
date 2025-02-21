@@ -1,52 +1,42 @@
-/* HorizontalScroll.css */
-
+/* Scroll Container */
 .scroll-container {
   width: 100%;
-  overflow-x: scroll; /* Allow horizontal scrolling */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
+  overflow: hidden;
   display: flex;
-  justify-content: center;
   position: relative;
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
-  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
 }
 
-/* For Webkit browsers (Chrome, Safari) */
+/* Hide scrollbar for Webkit */
 .scroll-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar */
+  display: none;
 }
 
+/* Scrolling Content */
 .scroll-content {
-  list-style-type: none;
   display: flex;
+  gap: 20px;
   padding: 0;
   margin: 0;
+  list-style: none;
+  animation: none; /* JS handles scrolling */
 }
 
-.scroll-content li {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-right: 16px; /* Optional: space between images */
-}
-
-/* Updated responsive image scaling */
+/* Image Styling */
 .scroll-image {
-  max-width: 400px; /* Increased max-width for better image visibility / / Ensures images scale based on the container */
+  width: 300px;
   height: auto;
-  padding: 5px;
-  display: inline-block;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Media queries for smaller screen sizes */
-@media (max-width: 360px) {
+/* Media Queries */
+@media (max-width: 600px) {
   .scroll-image {
-    width: 190px;
-  }
-}
-
-@media (max-width: 412px) {
-  .scroll-image {
-    width: 190px;
+    width: 200px;
   }
 }
