@@ -49,6 +49,18 @@ const Navbar: React.FC = () => {
           <li>
             <button
               onClick={() =>
+                window.open(
+                  "https://whatsapp.com/channel/0029Vb2w0RB2kNFxBXlBA33J"
+                )
+              }
+              className="registerbtn whatsapp-button"
+            >
+              Join Our WhatsApp
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() =>
                 window.open("https://unstop.com/o/FpG5D29?lb=GpnkcYYm", "_self")
               }
               className="registerbtn"

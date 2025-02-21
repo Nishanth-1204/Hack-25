@@ -115,6 +115,11 @@
   scale: 1.4;
 }
 
+.whatsapp-button {
+  width: 13rem;
+  padding: 5px;
+  background: #25d366;
+}
 .registerbtn:hover {
   background: linear-gradient(135deg, rgb(255, 215, 1), rgb(168, 40, 254));
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
@@ -124,4 +129,8 @@
   background: linear-gradient(135deg, rgb(86, 211, 253), rgb(205, 136, 251));
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
   transform: translateY(-1px); /* Slight lift effect */
+}
+
+.whatsapp-button:hover {
+  background: #128c7e;
 }
