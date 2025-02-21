@@ -43,7 +43,6 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-
 @-webkit-keyframes aitf {
   0% {
     background-position: 0% 50%;
