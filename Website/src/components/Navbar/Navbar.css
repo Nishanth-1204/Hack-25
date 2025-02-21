@@ -28,8 +28,8 @@
   font-size: clamp(0.9375rem, 0.5469rem + 1.25vw, 1.25rem);
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 100%;
-  max-width: 10%;
+  width: 10rem;
+  height: 3rem;
   min-width: 100px;
   background: linear-gradient(45deg, rgb(168, 40, 254), gold);
   border-radius: 8px;

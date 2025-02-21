@@ -3,11 +3,10 @@ import Schedule from "../Schedule/Schedule.tsx";
 import Countdown from "../../components/Countdown/Countdown.tsx";
 import PrizeSection from "../../components/PriceSection/PriceSection.tsx";
 import "./Home.css";
-import { useNavigate } from "react-router-dom";
+
 import FAQSection from "../../components/faq/FAQsection.tsx";
 
 const Home = () => {
-  const navigate = useNavigate();
   return (
     <>
       <div className="container">
@@ -19,9 +18,6 @@ const Home = () => {
         <h1 className="title">HackXelerate'25</h1>
         <div className="count">
           <Countdown />
-          <button onClick={() => navigate("/register")} className="registerbtn">
-            Register
-          </button>
         </div>
         <Schedule />
         <PrizeSection />

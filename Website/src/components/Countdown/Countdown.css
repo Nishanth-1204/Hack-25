@@ -1,3 +1,109 @@
-.countdown h1 {
-  font-size: clamp(2rem, -1.75rem + 12vw, 5rem);
+.flip-timer {
+  text-align: center;
+  background: transparent;
+  color: white;
+  padding: 1rem 1rem;
+  margin-top: 3rem;
+}
+
+.timer-title {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  color: #ffde59;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #ffde59;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background: transparent;
+}
+
+.timer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flip-card {
+  position: relative;
+  width: 100px;
+  height: 120px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+.flip-card.flip .flip-card-inner {
+  transform: rotateX(-180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 2px solid #ffde59;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ffde59;
+  box-shadow: 0 0 15px #ffde59;
+  backdrop-filter: blur(10px);
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateX(180deg);
+}
+
+.timer-label {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #bbb;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timer-container {
+    flex-wrap: wrap;
+  }
+
+  .flip-card {
+    width: 80px;
+    height: 100px;
+  }
+
+  .timer-label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-title {
+    font-size: 2rem;
+  }
+
+  .flip-card {
+    width: 70px;
+    height: 90px;
+  }
+
+  .timer-label {
+    font-size: 0.9rem;
+  }
 }

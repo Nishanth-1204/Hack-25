@@ -9,13 +9,6 @@ const Navbar = () => {
         <h1 onClick={() => navigate("/")} id="nav-title">
           HackXelerate
         </h1>
-        <button
-          onClick={() => navigate("/register")}
-          className="registerbtn"
-          id="register"
-        >
-          Register
-        </button>
       </nav>
       <hr className="hline-bottom"></hr>
     </header>

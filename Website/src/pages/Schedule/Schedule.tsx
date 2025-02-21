@@ -2,29 +2,24 @@ import React, { useState } from "react";
 import "./Schedule.css";
 
 const scheduleData: Record<string, { time: string; event: string }[]> = {
-  "December 28, 2024": [
-    { time: "08:30 AM - 12:30 PM", event: "Registration" },
-    { time: "01:30 PM - 03:00 PM", event: "Opening Ceremony" },
-    { time: "03:00 PM - 04:00 PM", event: "Platform Registration" },
-    { time: "04:00 PM - 06:00 PM", event: "First workshop + Quiz" },
-    { time: "08:30 PM - 10:00 PM", event: "Mentoring session 1" },
+  "April 24, 2025": [
+    { time: "08:00 AM - 09:30 AM", event: "Registration" },
+    { time: "09:30 AM - 10:00 AM", event: "Inauguration" },
+    { time: "12:00 PM - 01:00 PM", event: "Lunch" },
+    { time: "01:00 PM - 04:00 PM", event: "Round One Evaluation" },
+    { time: "08:00 PM - 09:00 PM", event: "Dinner" },
+    { time: "09:00 PM - 12:00 PM", event: "Round Two" },
   ],
-  "December 29, 2024": [
-    { time: "09:00 AM - 12:00 PM", event: "Second workshop" },
-    { time: "01:00 PM - 03:00 PM", event: "Team building activities" },
-    { time: "04:00 PM - 06:00 PM", event: "Coding challenge round 1" },
-    { time: "08:00 PM - 10:00 PM", event: "Mentoring session 2" },
-  ],
-  "December 30, 2024": [
-    { time: "09:00 AM - 11:00 AM", event: "Final coding round" },
-    { time: "12:00 PM - 02:00 PM", event: "Project presentation" },
-    { time: "03:00 PM - 05:00 PM", event: "Panel discussion" },
-    { time: "06:00 PM - 08:00 PM", event: "Closing Ceremony + Awards" },
+  "April 25, 2025": [
+    { time: "07:00 AM - 08:00 PM", event: "Breakfast" },
+    { time: "08:00 AM - 11:00 AM", event: "Team building activities" },
+    { time: "11:00 PM - 01:00 PM", event: "Lunch" },
+    { time: "01:00 PM - 02:00 PM", event: "Validatictory" },
   ],
 };
 
 const Schedule: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState<string>("December 28, 2024");
+  const [selectedDate, setSelectedDate] = useState<string>("April 24, 2025");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   const filteredEvents = scheduleData[selectedDate].filter((item) =>
