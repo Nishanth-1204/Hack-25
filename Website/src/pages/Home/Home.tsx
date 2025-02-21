@@ -5,7 +5,6 @@ import PrizeSection from "../../components/PriceSection/PriceSection.tsx";
 import "./Home.css";
 
 import FAQSection from "../../components/faq/FAQsection.tsx";
-// import SponsorSection from "../../components/SponsorSection/SponsorSection.tsx";
 
 const Home = () => {
   return (

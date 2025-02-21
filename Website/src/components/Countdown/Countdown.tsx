@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import "./Countdown.css";
 
 const Countdown: React.FC = () => {
-  // const navigate = useNavigate();
   const calculateTimeLeft = () => {
     const targetDate = new Date("2025-04-24T23:59:59").getTime();
     const now = new Date().getTime();
