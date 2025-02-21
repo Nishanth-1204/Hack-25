@@ -5,7 +5,7 @@ import Registration from "../models/registrationModel.js";
 import { generateUID } from "../utils/generateUID.js";
 import AppError from "../utils/appError.js";
 
-// Configure Google Drive API authentication
+// 🟢 Google Drive API authentication
 const auth = new google.auth.GoogleAuth({
   credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
   scopes: ["https://www.googleapis.com/auth/drive.file"],
@@ -14,68 +14,60 @@ const auth = new google.auth.GoogleAuth({
 const drive = google.drive({ version: "v3", auth });
 const folderId = process.env.GOOGLE_FOLDERID;
 
-// 🟢 Multer storage (memory-based to avoid disk I/O)
-const multerStorage = multer.memoryStorage();
+// 📄 Multer configuration (memory storage)
+const upload = multer({
+  storage: multer.memoryStorage(), // Ensure buffer is enabled
+  fileFilter: (req, file, cb) => {
+    file.mimetype === "application/pdf"
+      ? cb(null, true)
+      : cb(new AppError("Only PDF files are allowed!", 400), false);
+  },
+});
 
-const multerFilter = (req, file, cb) => {
-  if (file.mimetype === "application/pdf") {
-    cb(null, true);
-  } else {
-    cb(new AppError("Not a PDF! Please upload only PDF files.", 400), false);
-  }
-};
-
-const upload = multer({ storage: multerStorage, fileFilter: multerFilter });
-
-// 🚀 Upload PDF directly to Google Drive from buffer
+// 🚀 Upload PDF to Google Drive from buffer
 const uploadAbstractToDrive = async (fileBuffer, fileName) => {
   try {
     const response = await drive.files.create({
-      resource: {
+      requestBody: {
         name: fileName,
         parents: [folderId],
       },
       media: {
         mimeType: "application/pdf",
-        body: Buffer.from(fileBuffer), // Upload directly from buffer
+        body: fileBuffer, // Use buffer directly
       },
     });
 
-    // Set permissions to allow public access
+    // Set public permissions
     await drive.permissions.create({
       fileId: response.data.id,
-      requestBody: {
-        role: "reader",
-        type: "anyone",
-      },
+      requestBody: { role: "reader", type: "anyone" },
     });
 
-    // Generate file link
-    const fileLink = `https://drive.google.com/file/d/${response.data.id}/view?usp=sharing`;
-    return fileLink;
+    // Return public file link
+    return `https://drive.google.com/file/d/${response.data.id}/view?usp=sharing`;
   } catch (error) {
-    console.error("Drive Upload Error:", error);
-    throw new Error("Failed to upload file to Google Drive.");
+    console.error("🚨 Drive Upload Error:", error.message);
+    throw new AppError("Failed to upload file to Google Drive.", 500);
   }
 };
 
-// 📝 Registration endpoint
+// 📝 Registration controller
 const registration = catchAsync(async (req, res, next) => {
   if (!req.file) {
-    return res.status(400).json({ message: "Please upload a PDF file." });
+    return next(new AppError("Please upload a PDF file.", 400));
   }
 
-  // Generate UID for the uploaded file
   const uid = generateUID();
   req.uid = uid;
 
-  // Upload file to Google Drive
+  // Upload PDF to Google Drive
   const abstractLink = await uploadAbstractToDrive(
     req.file.buffer,
     `abstract-${uid}.pdf`
   );
 
-  // Create registration entry in MongoDB
+  // Save registration details
   const register = await Registration.create({
     teamName: req.body.teamName,
     uid: uid,
@@ -83,10 +75,7 @@ const registration = catchAsync(async (req, res, next) => {
     abstract: abstractLink,
   });
 
-  return res.status(200).json({
-    status: "success",
-    data: register,
-  });
+  res.status(200).json({ status: "success", data: register });
 });
 
 export default { registration, uploadAbstract: upload.single("abstract") };

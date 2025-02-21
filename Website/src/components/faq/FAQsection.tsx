@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./FAQsection.css";
 
 interface FAQ {
@@ -47,19 +47,38 @@ const faqs: FAQ[] = [
 ];
 
 const FAQSection: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
   return (
     <section id="faq" className="faq-section">
       <div className="faq-header">
         <h2 className="faq-title">FAQs</h2>
-        <p>Responses to the most frequently asked questions!</p>
+        <h3>Responses to the most frequently asked questions!</h3>
       </div>
       <div className="faq-container">
         {faqs.map((faq, index) => (
-          <div key={index} className="faq-card">
-            <div className="faq-content">
+          <div
+            key={index}
+            className={`faq-card ${openIndex === index ? "expanded" : ""}`}
+          >
+            <div className="faq-header-row">
               <h3 className="faq-question">{faq.question}</h3>
-              <p className="faq-answer">{faq.answer}</p>
+              <button
+                className="toggle-button"
+                onClick={() => toggleFAQ(index)}
+              >
+                {openIndex === index ? "-" : "+"}
+              </button>
             </div>
+            {openIndex === index && (
+              <div className="faq-answer">
+                <p>{faq.answer}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>
