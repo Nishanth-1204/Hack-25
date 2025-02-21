@@ -1,9 +1,7 @@
-import { useState } from "react";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [active, setActive] = useState(false);
   const navigate = useNavigate();
 
   const scrollToSection = (sectionId: string) => {
