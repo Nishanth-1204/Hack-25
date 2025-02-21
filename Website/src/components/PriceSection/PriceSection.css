@@ -32,10 +32,11 @@
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  border: 2px solid #ffde59;
   padding: 20px;
+  border: 2px solid #ffde59;
   width: 48%;
   max-width: 500px;
+  box-shadow: 0 0 8px 1px #ffd700;
   transition: transform 0.3s ease-in-out;
 }
 
