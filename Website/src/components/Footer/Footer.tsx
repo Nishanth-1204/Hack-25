@@ -22,23 +22,26 @@ export const Footer = () => {
 
           {/* Right Section */}
           <div className="footer-right">
-            <h3>About the company</h3>
+            <h3>About the Institute</h3>
             <p>
               To become a premier institute of academic excellence by imparting
               technical, intellectual, and professional skills to students.
             </p>
             <div className="social-icons">
-              <a href="#">
+              <a target="_blank" href="https://www.kpriet.ac.in/">
+                <img src="/website.png" width="30" height="30" />
+              </a>
+              <a target="_blank" href="https://www.facebook.com/KPRIETonline/">
                 <img src="/facebook.png" width="30" height="30" />
               </a>
-              <a href="#">
-                <img src="/twitter.png" width="30" height="30" />
-              </a>
-              <a href="#">
+              <a
+                target="_blank"
+                href="https://www.instagram.com/kprietonline/?hl=en"
+              >
                 <img src="/instagram.png" width="30" height="30" />
               </a>
-              <a href="#">
-                <img src="/github.png" width="30" height="30" />
+              <a target="_blank" href="https://x.com/KPRIETonline/">
+                <img src="/twitter.png" width="30" height="30" />
               </a>
             </div>
           </div>

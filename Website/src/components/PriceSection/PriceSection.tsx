@@ -38,7 +38,7 @@ const PrizeSection: React.FC = () => {
             fontWeight: "bold",
           }}
         >
-          75,000
+          78,000
         </h1>
       </div>
       <div className="prize-container">
