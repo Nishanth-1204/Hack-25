@@ -107,8 +107,10 @@
 }
 
 .mini-tv-container {
+  margin: 0 1rem;
   display: flex;
   align-items: center;
+  gap: 2rem;
   justify-content: center;
   min-height: 40vh;
 }
@@ -150,6 +152,14 @@
   opacity: 0.5;
 }
 
+.gallery-title {
+  font-size: 2.5rem;
+  color: gold;
+  font-weight: bold;
+  margin: 2rem 0;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .title {
     top: 50%;
@@ -159,6 +169,10 @@
   .rgbtn {
     font-size: 14px;
     padding: 8px 15px;
+  }
+
+  .mini-tv-container {
+    flex-direction: column;
   }
 
   .count {

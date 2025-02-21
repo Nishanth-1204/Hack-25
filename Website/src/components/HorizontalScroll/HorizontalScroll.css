@@ -1,6 +1,6 @@
 /* Scroll Container */
 .scroll-container {
-  width: 100%;
+  width: 40%;
   overflow: hidden;
   display: flex;
   position: relative;
@@ -35,7 +35,10 @@
 }
 
 /* Media Queries */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .scroll-container {
+    width: 100%;
+  }
   .scroll-image {
     width: 200px;
   }
