@@ -10,6 +10,10 @@ body {
   background-color: black;
 }
 
+section {
+  scroll-margin-top: 40px;
+}
+
 .circle-cursor {
   position: fixed;
 
