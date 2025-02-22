@@ -36,6 +36,20 @@ export const Footer = () => {
             <h2>Contact the Organisers</h2>
             <div className="contact-info">
               <div className="contacts">
+                <h3>DharaniPriya M</h3>
+                <span>
+                  <a href="mailto:22cb013@kpriet.ac.in">22cb013@kpriet.ac.in</a>
+                </span>
+                <p>+91 9360640951</p>
+              </div>
+              <div className="contacts">
+                <h3>Priyadharshini I</h3>
+                <span>
+                  <a href="mailto:23cb034@kpriet.ac.in">22cb013@kpriet.ac.in</a>
+                </span>
+                <p>+91 9677901869</p>
+              </div>
+              <div className="contacts">
                 <h3>Team HackXelerate</h3>
                 <span>
                   <a href="mailto:hackxelerate@gmail.com">
@@ -64,20 +78,6 @@ export const Footer = () => {
                   <a href="mailto:23cb040@kpriet.ac.in">23cb040@kpriet.ac.in</a>
                 </span>
                 <p>+91 8778635036</p>
-              </div>
-              <div className="contacts">
-                <h3>DharaniPriya M</h3>
-                <span>
-                  <a href="mailto:22cb013@kpriet.ac.in">22cb013@kpriet.ac.in</a>
-                </span>
-                <p>+91 9360640951</p>
-              </div>
-              <div className="contacts">
-                <h3>Priyadharshini I</h3>
-                <span>
-                  <a href="mailto:23cb034@kpriet.ac.in">22cb013@kpriet.ac.in</a>
-                </span>
-                <p>+91 9677901869</p>
               </div>
             </div>
           </div>
