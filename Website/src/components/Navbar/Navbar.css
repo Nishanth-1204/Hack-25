@@ -80,6 +80,7 @@
 
 .whatsapp-button {
   background: #25d366;
+  color: white;
   padding: 8px 16px;
   border-radius: 8px;
   font-size: 1rem;
@@ -89,6 +90,16 @@
 
 .whatsapp-button:hover {
   background: #128c7e;
+}
+
+/* ===== Desktop View Only ===== */
+.desktop-only {
+  display: block;
+}
+
+/* ===== Mobile View Only ===== */
+.mobile-only {
+  display: none;
 }
 
 /* ===== Mobile View (Hamburger Menu) ===== */
@@ -125,15 +136,14 @@
     color: black;
   }
 
-  /* WhatsApp Button in Mobile */
-  .whatsapp-button {
-    width: 80%;
-    margin: 8px 0;
-    text-align: center;
+  /* Show Mobile WhatsApp Button */
+  .mobile-only {
+    display: block;
+    margin-right: 10px;
   }
-}
 
-.whatsapp-button img {
-  width: 20px;
-  margin-top: 1px;
+  /* Hide Desktop WhatsApp Button */
+  .desktop-only {
+    display: none;
+  }
 }
