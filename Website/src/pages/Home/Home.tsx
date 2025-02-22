@@ -19,6 +19,22 @@ const Home = () => {
         </section>
         <section id="countdown" className="count">
           <Countdown />
+          <div>
+            <a
+              href="./src/assets/Rulebook.pdf"
+              download="Rulebook.pdf"
+              className="Download-btn"
+            >
+              <h3 className="rule">RuleBook</h3>
+            </a>
+            <a
+              href="./src/assets/template.docx"
+              download="template.dcox"
+              className="Download-btn1"
+            >
+              <h3>PDF template</h3>
+            </a>
+          </div>
         </section>
         <section id="schedule">
           <Schedule />
