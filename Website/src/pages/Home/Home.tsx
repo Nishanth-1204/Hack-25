@@ -25,14 +25,14 @@ const Home = () => {
               download="Rulebook.pdf"
               className="Download-btn"
             >
-              <h3 className="rule">RuleBook</h3>
+              <h4 className="rule">RuleBook Download</h4>
             </a>
             <a
               href="./src/assets/template.docx"
               download="template.dcox"
               className="Download-btn1"
             >
-              <h3>PDF template</h3>
+              <h4>PDF template Download</h4>
             </a>
           </div>
         </section>

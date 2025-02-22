@@ -65,6 +65,8 @@
   background: linear-gradient(45deg, rgb(168, 40, 254), gold);
   border-radius: 8px;
   border: none;
+  font-weight: bold;
+  font-size: 1.1rem;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
