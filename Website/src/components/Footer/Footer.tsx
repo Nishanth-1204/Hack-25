@@ -72,6 +72,13 @@ export const Footer = () => {
                 </span>
                 <p>+91 9360640951</p>
               </div>
+              <div className="contacts">
+                <h3>Priyadharshini I</h3>
+                <span>
+                  <a href="mailto:23cb034@kpriet.ac.in">22cb013@kpriet.ac.in</a>
+                </span>
+                <p>+91 9677901869</p>
+              </div>
             </div>
           </div>
         </div>
