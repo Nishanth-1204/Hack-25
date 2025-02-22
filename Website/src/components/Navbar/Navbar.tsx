@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false); // Close menu after clicking an item
+      setMenuOpen(false);
     }
   };
 
@@ -20,6 +20,16 @@ const Navbar: React.FC = () => {
         <h1 onClick={() => navigate("/")} id="nav-title">
           HackXelerate
         </h1>
+
+        {/* Join WhatsApp - Visible Only in Mobile */}
+        <button
+          onClick={() =>
+            window.open("https://whatsapp.com/channel/0029Vb2w0RB2kNFxBXlBA33J")
+          }
+          className="whatsapp-button mobile-only"
+        >
+          Join WhatsApp
+        </button>
 
         {/* Navigation List */}
         <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
@@ -42,8 +52,8 @@ const Navbar: React.FC = () => {
             FAQs
           </li>
 
-          {/* Join Our WhatsApp - Only After FAQ */}
-          <li className="nav-item">
+          {/* Join WhatsApp - Desktop Only */}
+          <li className="nav-item desktop-only">
             <button
               onClick={() =>
                 window.open(

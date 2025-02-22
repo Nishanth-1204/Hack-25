@@ -32,17 +32,12 @@ const Home = () => {
           <div className="mini-tv-container">
             <div className="mini-tv-frame">
               <div className="mini-tv-screen">
-                <video
+                <iframe
                   className="mini-tv-video"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  width={"100%"}
-                >
-                  <source src={"/video.mp4"} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  src="https://youtu.be/B_950wqT-7E?si=tFuZubsOlqBbiXg3"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
               </div>
               <div className="mini-tv-glow"></div>
             </div>
