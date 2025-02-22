@@ -4,20 +4,24 @@ import Home from "./pages/Home/Home";
 import CircleCursor from "./components/CircleCursor";
 import GridBackground from "./components/background/Grid";
 import { Footer } from "./components/Footer/Footer";
+import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   return (
-    <BrowserRouter>
-      <GridBackground />
-      <Navbar />
-      <Routes>
-        <Route path="" element={<Home />} />
-        {/* <Route path="/register" element={<Register />} />
+    <>
+      <Analytics />
+      <BrowserRouter>
+        <GridBackground />
+        <Navbar />
+        <Routes>
+          <Route path="" element={<Home />} />
+          {/* <Route path="/register" element={<Register />} />
         <Route path="/admin/dash" element={<Dashboard />} /> */}
-      </Routes>
+        </Routes>
 
-      <Footer />
-      <CircleCursor />
-    </BrowserRouter>
+        <Footer />
+        <CircleCursor />
+      </BrowserRouter>
+    </>
   );
 };
 
