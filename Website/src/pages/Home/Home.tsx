@@ -13,7 +13,7 @@ const Home = () => {
       <div className="container">
         <section id="home" className="vidcontainer">
           <video className="vid1" autoPlay muted loop>
-            <source src="/vid1.mp4" type="video/mp4" />
+            <source src="/videos/vid1.mp4" type="video/mp4" />
           </video>
           <h1 className="title">HackXelerate'25</h1>
         </section>
@@ -56,7 +56,7 @@ const Home = () => {
                   playsInline
                   width={"100%"}
                 >
-                  <source src={"/video.mp4"} type="video/mp4" />
+                  <source src={"/videos/video.mp4"} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
