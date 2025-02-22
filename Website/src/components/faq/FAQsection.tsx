@@ -16,7 +16,7 @@ const faqs: FAQ[] = [
   {
     question: "Is there a registration fee for participation?",
     answer:
-      "The 1st round is free. The 2nd round requires a fee of Rs.799 per team.",
+      "The 1st round is free. The 2nd round requires a fee of Rs.600 per member.",
     image: "Images/Images/2.png",
   },
   {
