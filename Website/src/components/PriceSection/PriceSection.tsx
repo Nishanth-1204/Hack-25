@@ -20,7 +20,7 @@ const prizes: Prize[] = [
   },
   { name: "Mr. Xelerate", image: img4 },
   { name: "Zenith Xelerate", image: img4 },
-  { name: "Xelerates-(10)", image: img4 },
+  { name: "Xelerates-(For 10 Members)", image: img4 },
 ];
 
 const PrizeSection: React.FC = () => {
@@ -38,7 +38,7 @@ const PrizeSection: React.FC = () => {
             fontWeight: "bold",
           }}
         >
-          78,000
+          80,000
         </h1>
       </div>
       <div className="prize-container">
