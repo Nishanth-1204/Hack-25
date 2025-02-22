@@ -36,6 +36,15 @@ export const Footer = () => {
             <h2>Contact the Organisers</h2>
             <div className="contact-info">
               <div className="contacts">
+                <h3>Team HackXelerate</h3>
+                <span>
+                  <a href="mailto:hackxelerate@gmail.com">
+                    hackxelerate@gmail.com
+                  </a>
+                </span>
+                <p>+91 6382148621</p>
+              </div>
+              <div className="contacts">
                 <h3>DharaniPriya M</h3>
                 <span>
                   <a href="mailto:22cb013@kpriet.ac.in">22cb013@kpriet.ac.in</a>
@@ -48,15 +57,6 @@ export const Footer = () => {
                   <a href="mailto:23cb034@kpriet.ac.in">22cb013@kpriet.ac.in</a>
                 </span>
                 <p>+91 9677901869</p>
-              </div>
-              <div className="contacts">
-                <h3>Team HackXelerate</h3>
-                <span>
-                  <a href="mailto:hackxelerate@gmail.com">
-                    hackxelerate@gmail.com
-                  </a>
-                </span>
-                <p>+91 6382148621</p>
               </div>
               <div className="contacts">
                 <h3>Dhanyaa R S</h3>
