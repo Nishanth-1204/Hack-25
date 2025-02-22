@@ -71,6 +71,7 @@
   height: 100vh;
   object-fit: cover;
   display: block;
+  border: none;
 }
 
 .count-vid {

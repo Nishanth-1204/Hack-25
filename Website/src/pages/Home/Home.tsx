@@ -12,8 +12,9 @@ const Home = () => {
     <>
       <div className="container">
         <section id="home" className="vidcontainer">
-          <video className="vid1" autoPlay muted loop>
+          <video autoPlay muted loop className="vid1" width="640" playsInline>
             <source src="/videos/vid1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
           <h1 className="title">HackXelerate'25</h1>
         </section>
@@ -44,7 +45,7 @@ const Home = () => {
         </section>
 
         <section id="gallery" className="mini-tv-section">
-          <h1 className="gallery-title">Gallery</h1>
+          <h1 className="gallery-title">Past Year Gallery</h1>
           <div className="mini-tv-container">
             <div className="mini-tv-frame">
               <div className="mini-tv-screen">
