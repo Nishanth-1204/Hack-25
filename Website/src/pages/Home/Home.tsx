@@ -56,10 +56,7 @@ const Home = () => {
                   playsInline
                   width={"100%"}
                 >
-                  <source
-                    src={"https://youtu.be/B_950wqT-7E?si=tFuZubsOlqBbiXg3"}
-                    type="video/mp4"
-                  />
+                  <source src={"/video.mp4"} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
