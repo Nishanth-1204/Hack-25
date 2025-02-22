@@ -21,15 +21,15 @@ const Home = () => {
           <Countdown />
           <div>
             <a
-              href="./src/assets/Rulebook.pdf"
+              href="/assets/Rulebook.pdf"
               download="Rulebook.pdf"
               className="Download-btn"
             >
               <h4 className="rule">RuleBook Download</h4>
             </a>
             <a
-              href="./src/assets/template.docx"
-              download="template.dcox"
+              href="/assets/template.docx"
+              download="template.docx"
               className="Download-btn1"
             >
               <h4>PDF template Download</h4>
