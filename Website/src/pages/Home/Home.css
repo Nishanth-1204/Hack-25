@@ -26,7 +26,7 @@
 
   /* Clip Background Image */
 
-  background: url("/public/animated-text-fill.png") repeat-y;
+  background: url("/animated-text-fill.png") repeat-y;
   -webkit-background-clip: text;
   background-clip: text;
 

@@ -56,7 +56,7 @@ const FAQSection: React.FC = () => {
   return (
     <section id="faq" className="faq-section">
       <div className="faq-header">
-        <h2 className="faq-title">FAQs</h2>
+        <h1 className="faq-title">FAQs</h1>
         <h3>Responses to the most frequently asked questions!</h3>
       </div>
       <div className="faq-container">

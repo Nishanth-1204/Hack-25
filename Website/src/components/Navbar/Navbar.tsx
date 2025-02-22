@@ -21,12 +21,7 @@ const Navbar: React.FC = () => {
           HackXelerate
         </h1>
 
-        {/* Hamburger Menu Button */}
-        <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
-          ☰
-        </button>
-
-        {/* Navigation List - Show/Hide Based on menuOpen */}
+        {/* Navigation List */}
         <ul className={`nav-list ${menuOpen ? "open" : ""}`}>
           <li className="nav-item" onClick={() => scrollToSection("home")}>
             Home
@@ -46,7 +41,9 @@ const Navbar: React.FC = () => {
           <li className="nav-item" onClick={() => scrollToSection("faq")}>
             FAQs
           </li>
-          <li>
+
+          {/* Join Our WhatsApp - Only After FAQ */}
+          <li className="nav-item">
             <button
               onClick={() =>
                 window.open(
@@ -55,9 +52,11 @@ const Navbar: React.FC = () => {
               }
               className="registerbtn whatsapp-button"
             >
-              Join Our WhatsApp
+              Join WhatsApp
             </button>
           </li>
+
+          {/* Register Button */}
           <li>
             <button
               onClick={() =>
@@ -69,6 +68,11 @@ const Navbar: React.FC = () => {
             </button>
           </li>
         </ul>
+
+        {/* Hamburger Menu Button */}
+        <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </button>
       </nav>
     </header>
   );
