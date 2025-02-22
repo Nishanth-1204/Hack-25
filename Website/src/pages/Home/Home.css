@@ -269,3 +269,8 @@
     -webkit-animation: aitf 200s linear infinite;
   }
 } */
+
+.rule {
+  align-items: center;
+  justify-self: center;
+}

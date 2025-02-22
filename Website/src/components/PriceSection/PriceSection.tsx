@@ -14,12 +14,12 @@ const prizes: Prize[] = [
   { name: "2nd Prize", image: img2 },
   { name: "3rd Prize", image: img3 },
   {
-    name: "MissXelerate",
+    name: "Miss. Xelerate",
 
     image: img4,
   },
-  { name: "MrXelerate", image: img4 },
-  { name: "Zenith", image: img4 },
+  { name: "Mr. Xelerate", image: img4 },
+  { name: "Zenith Xelerate", image: img4 },
   { name: "Xelerates-(10)", image: img4 },
 ];
 
