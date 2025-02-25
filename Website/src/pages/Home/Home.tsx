@@ -19,20 +19,22 @@ const Home = () => {
         </section>
         <section id="countdown" className="count">
           <Countdown />
-          <div>
+          <div className="home-div-container">
             <a
-              href="/assets/Rulebook.pdf"
-              download="Rulebook.pdf"
+              href="https://drive.google.com/file/d/1dEt6iWR3kM6Y9YUL9PtumbLlVslGIR1R/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="Download-btn"
             >
               <h4 className="rule">RuleBook Download</h4>
             </a>
             <a
-              href="/assets/template.docx"
-              download="template.docx"
+              href="https://drive.google.com/file/d/1BGFXS7tt9ExXaioZMF4Rb8c_NRS1I552/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
               className="Download-btn1"
             >
-              <h4>PDF template Download</h4>
+              <h4 className="template">PDF Template Download</h4>
             </a>
           </div>
         </section>
