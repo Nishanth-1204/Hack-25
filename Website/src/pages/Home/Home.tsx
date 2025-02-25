@@ -34,7 +34,7 @@ const Home = () => {
               rel="noopener noreferrer"
               className="Download-btn1"
             >
-              <h4 className="template">PDF Template Download</h4>
+              <h4 className="template">Broucher</h4>
             </a>
             <a
               href="https://docs.google.com/document/d/17FNI2grg_SDJ7401zCDw5kF6Ef3_wrf3/edit?usp=sharing&ouid=113957660542972190779&rtpof=true&sd=true"
