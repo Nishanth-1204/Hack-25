@@ -37,6 +37,14 @@ const Home = () => {
             >
               <h4 className="template">PDF Template Download</h4>
             </a>
+            <a
+              href="https://docs.google.com/document/d/17FNI2grg_SDJ7401zCDw5kF6Ef3_wrf3/edit?usp=sharing&ouid=113957660542972190779&rtpof=true&sd=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="Download-btn2"
+            >
+              <h4 className="abstract-Form">Abstract Submission Form</h4>
+            </a>
           </div>
         </section>
         <section id="schedule">
