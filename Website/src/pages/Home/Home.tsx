@@ -12,19 +12,13 @@ const Home = () => {
     <>
       <div className="container">
         <section id="home" className="vidcontainer">
-          <video
-            className="vid1"
-            autoPlay
-            muted
-            loop
-            onContextMenu={(e) => e.preventDefault()}
-          >
+          <video autoPlay muted loop className="vid1" width="640" playsInline>
             <source src="/vid1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
           <h1 className="title">HackXelerate'25</h1>
           <h1 className="subtitle">A National Level Technical Hackathon</h1>
         </section>
-
         <section id="countdown" className="count">
           <Countdown />
           <div className="home-div-container">
@@ -34,7 +28,7 @@ const Home = () => {
               rel="noopener noreferrer"
               className="Download-btn"
             >
-              <h4 className="rule">RuleBook</h4>
+              <h4 className="rule">RuleBook Download</h4>
             </a>
             <a
               href="https://drive.google.com/file/d/1BGFXS7tt9ExXaioZMF4Rb8c_NRS1I552/view?usp=drive_link"
@@ -54,17 +48,15 @@ const Home = () => {
             </a>
           </div>
         </section>
-
         <section id="schedule">
           <Schedule />
         </section>
-
         <section id="prizes">
           <PrizeSection />
         </section>
 
         <section id="gallery" className="mini-tv-section">
-          <h1 className="gallery-title">Gallery</h1>
+          <h1 className="gallery-title">Past Year Gallery</h1>
           <div className="mini-tv-container">
             <div className="mini-tv-frame">
               <div className="mini-tv-screen">
@@ -89,12 +81,10 @@ const Home = () => {
           <h1 className="sponsor-title">Our Honoured Sponsors</h1>
           <SponsorSection />
         </section>
-
         <section id="faq">
           <FAQSection />
         </section>
       </div>
-      {/* <Footer /> */}
     </>
   );
 };
