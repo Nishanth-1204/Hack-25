@@ -17,6 +17,7 @@ const Home = () => {
             Your browser does not support the video tag.
           </video>
           <h1 className="title">HackXelerate'25</h1>
+          <h1 className="subtitle">A National Level Technical Hackathon</h1>
         </section>
         <section id="countdown" className="count">
           <Countdown />
@@ -84,7 +85,6 @@ const Home = () => {
           <FAQSection />
         </section>
       </div>
-      {/* <Footer /> */}
     </>
   );
 };
