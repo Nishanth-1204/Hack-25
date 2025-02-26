@@ -43,6 +43,20 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+.subtitle {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffde59; /* White text for contrast */
+  text-align: center;
+  max-width: 80%;
+  word-wrap: break-word;
+  font: 600 clamp(1.5rem, 1rem + 2vw, 3rem) "Poppins", sans-serif;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #ffde59, 0 0 500px #ffde59;
+}
+
 @-webkit-keyframes aitf {
   0% {
     background-position: 0% 50%;
