@@ -17,7 +17,6 @@ const Home = () => {
             autoPlay
             muted
             loop
-            controls={false}
             onContextMenu={(e) => e.preventDefault()}
           >
             <source src="/vid1.mp4" type="video/mp4" />
