@@ -28,7 +28,7 @@ const Home = () => {
               rel="noopener noreferrer"
               className="Download-btn"
             >
-              <h4 className="rule">RuleBook Download</h4>
+              <h4 className="rule">RuleBook</h4>
             </a>
             <a
               href="https://drive.google.com/file/d/1BGFXS7tt9ExXaioZMF4Rb8c_NRS1I552/view?usp=drive_link"
