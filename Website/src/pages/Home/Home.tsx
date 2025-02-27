@@ -55,23 +55,6 @@ const Home = () => {
           <PrizeSection />
         </section>
         <section id="gallery" className="mini-tv-section">
-          <h1 className="gallery-title">Current Gallery</h1>
-          <div className="mini-tv-container">
-            <div className="mini-tv-screen">
-              <iframe
-                height={480}
-                width={900}
-                className="mini-tv-video"
-                src="https://www.youtube.com/embed/YWvv5Z0w0WA?si=qW5p44kwxUTvwpaZ&rel=0"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-        </section>
-
-        <section id="gallery" className="mini-tv-section">
           <h1 className="gallery-title">Past Gallery</h1>
           <div className="mini-tv-container">
             <div className="mini-tv-frame">
