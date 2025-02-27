@@ -73,6 +73,7 @@ const Home = () => {
 
         {/* Past Gallery Section */}
         <section id="past-gallery" className="mini-tv-section">
+        <section id="gallery" className="mini-tv-section">
           <h1 className="gallery-title">Past Gallery</h1>
           <div className="mini-tv-container">
             <div className="mini-tv-frame">
@@ -99,5 +100,4 @@ const Home = () => {
     </>
   );
 };
-
 export default Home;

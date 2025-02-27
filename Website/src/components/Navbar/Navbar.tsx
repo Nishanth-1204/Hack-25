@@ -13,7 +13,6 @@ const Navbar: React.FC = () => {
       setMenuOpen(false);
     }
   };
-
   return (
     <header className="nav-header">
       <nav className="navbar">
