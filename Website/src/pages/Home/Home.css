@@ -45,14 +45,14 @@
 }
 .subtitle {
   position: absolute;
-  top: 65%;
+  top: 60%;
   left: 50%;
   transform: translateX(-50%);
   color: #ffde59; /* White text for contrast */
   text-align: center;
   max-width: 80%;
   word-wrap: break-word;
-  font: 600 clamp(1.5rem, 1rem + 2vw, 3rem) "Poppins", sans-serif;
+  font: 800 clamp(1.5rem, 1rem + 2vw, 3rem) "Poppins", sans-serif;
   letter-spacing: 1px;
   text-shadow: 0 0 10px #ffde59, 0 0 500px #ffde59;
 }
@@ -167,6 +167,10 @@
   opacity: 0.5;
 }
 
+.mini-tv-video {
+  z-index: 1000000;
+}
+
 .gallery-title {
   font-size: 2.5rem;
   color: gold;
@@ -186,12 +190,24 @@
     padding: 8px 15px;
   }
 
+  .mini-tv-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .mini-tv-container {
     flex-direction: column;
+    width: 100%;
   }
 
   .count {
     margin-top: 5vh;
+  }
+
+  .subtitle {
+    top: 55%;
   }
 }
 
@@ -292,7 +308,7 @@
 
 .rule {
   display: inline-block;
-  background-color: #FFD43B;
+  background-color: #ffd43b;
   color: #000;
   font-weight: bold;
   font-size: 20px;
@@ -306,7 +322,7 @@
 }
 .template {
   display: inline-block;
-  background-color: #FFD43B;
+  background-color: #ffd43b;
   color: #000;
   font-weight: bold;
   font-size: 20px;
@@ -318,9 +334,9 @@
   align-items: center;
   justify-self: center;
 }
-.abstract-Form{
+.abstract-Form {
   display: inline-block;
-  background-color: #FFD43B;
+  background-color: #ffd43b;
   color: #000;
   font-weight: bold;
   font-size: 20px;
