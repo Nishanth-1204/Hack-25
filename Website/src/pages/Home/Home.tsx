@@ -54,6 +54,8 @@ const Home = () => {
         <section id="prizes">
           <PrizeSection />
         </section>
+
+        {/* Current Gallery Section */}
         <section id="current-gallery" className="mini-tv-section">
           <h1 className="gallery-title">Current Gallery</h1>
           <div className="mini-tv-container">
@@ -68,6 +70,8 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* Past Gallery Section */}
         <section id="past-gallery" className="mini-tv-section">
           <h1 className="gallery-title">Past Gallery</h1>
           <div className="mini-tv-container">
@@ -83,6 +87,7 @@ const Home = () => {
             <Horizontalscroll />
           </div>
         </section>
+
         <section>
           <h1 className="sponsor-title">Our Honoured Sponsors</h1>
           <SponsorSection />
