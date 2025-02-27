@@ -62,9 +62,9 @@ const Home = () => {
                 height={480}
                 width={900}
                 className="mini-tv-video"
-                src="https://www.youtube.com/embed/YWvv5Z0w0WA?si=qW5p44kwxUTvwpaZ&rel=0"
+                src="https://www.youtube.com/embed/0eHbbyfVRk4?si=h1-GsPYofG7RHUeJ&rel=0"
                 title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
                 allowFullScreen
               ></iframe>
             </div>
