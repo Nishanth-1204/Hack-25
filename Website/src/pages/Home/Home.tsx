@@ -55,22 +55,24 @@ const Home = () => {
           <PrizeSection />
         </section>
         <section id="gallery" className="mini-tv-section">
-          <h1 className="gallery-title">Current Gallery</h1>
-          <div className="mini-tv-container">
+        <h1 className="gallery-title">Current Gallery</h1>
+        <div className="mini-tv-container">
+          <div className="mini-tv-frame">
             <div className="mini-tv-screen">
-              <iframe
-                height={480}
-                width={900}
+              <video
                 className="mini-tv-video"
-                src="https://www.youtube.com/embed/0eHbbyfVRk4?si=h1-GsPYofG7RHUeJ&rel=0"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
-                allowFullScreen
-              ></iframe>
+                playsInline
+                width="100%"
+                controls
+              >
+                <source src="/HackXelerate'24 Title Reveal.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
+            <div className="mini-tv-glow"></div>
           </div>
-        </section>
-
+        </div>
+      </section>
         <section id="gallery" className="mini-tv-section">
           <h1 className="gallery-title">Past Gallery</h1>
           <div className="mini-tv-container">
