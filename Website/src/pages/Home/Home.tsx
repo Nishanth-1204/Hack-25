@@ -36,7 +36,7 @@ const Home = () => {
               rel="noopener noreferrer"
               className="Download-btn1"
             >
-              <h4 className="template">Broucher</h4>
+              <h4 className="template">Brochure</h4>
             </a>
             <a
               href="https://docs.google.com/document/d/17FNI2grg_SDJ7401zCDw5kF6Ef3_wrf3/edit?usp=sharing&ouid=113957660542972190779&rtpof=true&sd=true"
@@ -54,38 +54,26 @@ const Home = () => {
         <section id="prizes">
           <PrizeSection />
         </section>
-        <section id="gallery" className="mini-tv-section">
-        <h1 className="gallery-title">Current Gallery</h1>
-        <div className="mini-tv-container">
-          <div className="mini-tv-frame">
-            <div className="mini-tv-screen">
-              <video
-                className="mini-tv-video"
-                playsInline
-                width="100%"
-                controls
-              >
-                <source src="/HackXelerate'24 Title Reveal.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+        <section id="current-gallery" className="mini-tv-section">
+          <h1 className="gallery-title">Current Gallery</h1>
+          <div className="mini-tv-container">
+            <div className="mini-tv-frame">
+              <div className="mini-tv-screen">
+                <video className="mini-tv-video" playsInline width="100%" controls>
+                  <source src="/HackXelerate'24 Title Reveal.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="mini-tv-glow"></div>
             </div>
-            <div className="mini-tv-glow"></div>
           </div>
-        </div>
-      </section>
-        <section id="gallery" className="mini-tv-section">
+        </section>
+        <section id="past-gallery" className="mini-tv-section">
           <h1 className="gallery-title">Past Gallery</h1>
           <div className="mini-tv-container">
             <div className="mini-tv-frame">
               <div className="mini-tv-screen">
-                <video
-                  className="mini-tv-video"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  width={"100%"}
-                >
+                <video className="mini-tv-video" autoPlay muted loop playsInline width={"100%"}>
                   <source src={"/video.mp4"} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
