@@ -54,9 +54,23 @@ const Home = () => {
         <section id="prizes">
           <PrizeSection />
         </section>
+        <section id="gallery" className="mini-tv-section">
+          <h1 className="gallery-title">Current Gallery</h1>
+          <div className="mini-tv-container">
+            <div className="mini-tv-frame">
+              <div className="mini-tv-screen">
+                <video className="mini-tv-video" controls width={"100%"}>
+                  <source src={"/reels1.mp4"} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="mini-tv-glow"></div>
+            </div>
+          </div>
+        </section>
 
         <section id="gallery" className="mini-tv-section">
-          <h1 className="gallery-title">Past Year Gallery</h1>
+          <h1 className="gallery-title">Past Gallery</h1>
           <div className="mini-tv-container">
             <div className="mini-tv-frame">
               <div className="mini-tv-screen">
