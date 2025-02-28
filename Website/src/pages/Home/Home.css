@@ -12,16 +12,18 @@
 }
 
 .title {
-  position: absolute;
+   position: absolute;
   top: 53%;
   left: 50%;
   color: white;
   text-align: center;
   max-width: 90%;
-  word-wrap: break-word;
   font: 700 clamp(2.5rem, -3.25rem + 20vw, 8rem) "Inter", sans-serif;
   letter-spacing: 0;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap; /* Prevents breaking into multiple lines */
   text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
 
   /* Clip Background Image */
@@ -397,79 +399,60 @@
   }
 }
 
-/* any mobile website optimization code Begining */
+/* any mobile and tablet and ipad website optimization code Begining */
+/* Default styles (for larger screens) */
+.title {
+  font-size: clamp(3.5rem, 7vw, 6rem); /* Large title */
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-@media (max-width: 768px) {
-  .nav {
-    height: 45px;
-    padding: 0 10px;
-  }
+.subtitle {
+  font-size: clamp(2rem, 5vw, 3rem); /* Medium subtitle */
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+}
 
+/* Tablets and iPads */
+@media (max-width: 1024px) {
   .title {
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    top: 48%;
-    text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+    font-size: clamp(3rem, 6vw, 5rem);
   }
 
   .subtitle {
-    font-size: clamp(1rem, 2.5vw, 2rem);
-    top: 55%;
-  }
-
-  .count {
-    margin-top: 5vh;
-    font-size: 1.5rem;
-  }
-
-  .rgbtn {
-    font-size: 14px;
-    padding: 10px 18px;
-  }
-
-  .mini-tv-container,
-  .video-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .mini-tv-frame {
-    width: 95%;
-    padding: 6px;
-  }
-
-  .gallery-title {
-    font-size: 2rem;
-  }
-
-  .glowing-box {
-    width: 95%;
-    box-shadow: 0 0 8px #ffd43b;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
 }
 
+/* Smaller tablets */
+@media (max-width: 768px) {
+  .title {
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+  }
+
+  .subtitle {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+  }
+}
+
+/* Mobile phones */
 @media (max-width: 480px) {
   .title {
-    font-size: clamp(3.5rem, 5vw, 2.5rem);
-    top: 45%;
+    font-size: clamp(2.5rem, 8vw, 4rem);
   }
 
   .subtitle {
-    font-size: clamp(1.8rem, 1vw, 2.8rem);
-    top: 50%;
-  }
-
-  .rgbtn {
-    font-size: 12px;
-    padding: 8px 14px;
-  }
-
-  .mini-tv-container {
-    gap: 0.5rem;
-  }
-
-  .count {
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 4.5vw, 2rem);
   }
 }
 
-/* any mobile website optimization code ending */
+
+/* any mobile and tablet and ipad website optimization code ending */
