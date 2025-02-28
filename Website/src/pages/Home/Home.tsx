@@ -54,6 +54,22 @@ const Home = () => {
         <section id="prizes">
           <PrizeSection />
         </section>
+        {/* Current Gallery Section */}
+        <section id="current-gallery" className="mini-tv-section">
+          <h1 className="gallery-title">Current Gallery</h1>
+          <div className="video-wrapper">
+            <div className="glowing-box">
+              <iframe
+                className="responsive-video"
+                src="https://www.youtube.com/embed/0eHbbyfVRk4?si=UQRTcH9KGx8ROsgT"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen>
+              </iframe>
+            </div>
+          </div>
+        </section>
         <section id="gallery" className="mini-tv-section">
           <h1 className="gallery-title">Past Gallery</h1>
           <div className="mini-tv-container">
