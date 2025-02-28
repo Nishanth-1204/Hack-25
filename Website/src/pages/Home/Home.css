@@ -396,3 +396,80 @@
     padding: 5px;
   }
 }
+
+/* any mobile website optimization code Begining */
+
+@media (max-width: 768px) {
+  .nav {
+    height: 45px;
+    padding: 0 10px;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    top: 48%;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    top: 55%;
+  }
+
+  .count {
+    margin-top: 5vh;
+    font-size: 1.5rem;
+  }
+
+  .rgbtn {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .mini-tv-container,
+  .video-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .mini-tv-frame {
+    width: 95%;
+    padding: 6px;
+  }
+
+  .gallery-title {
+    font-size: 2rem;
+  }
+
+  .glowing-box {
+    width: 95%;
+    box-shadow: 0 0 8px #ffd43b;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: clamp(3.5rem, 5vw, 2.5rem);
+    top: 45%;
+  }
+
+  .subtitle {
+    font-size: clamp(1.8rem, 1vw, 2.8rem);
+    top: 50%;
+  }
+
+  .rgbtn {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .mini-tv-container {
+    gap: 0.5rem;
+  }
+
+  .count {
+    font-size: 1.2rem;
+  }
+}
+
+/* any mobile website optimization code ending */
