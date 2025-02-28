@@ -348,3 +348,51 @@
   align-items: center;
   justify-self: center;
 }
+/*youtube video box */
+
+/* Center the video and prevent overflow */
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Glowing Box */
+.glowing-box {
+  padding: 0px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow:
+    0 0 10px #ffd43b,  
+    0 0 10px #ffd43b,  
+    0 0 10px #ffd43b;  
+  width: 90%;
+  max-width: 700px;
+}
+
+/* Responsive Video */
+.responsive-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 5px;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .glowing-box {
+    padding: 5px;
+    width: 95%;
+    box-shadow:
+      0 0 10px #ffd43b, 
+      0 0 10px #ffd43b;
+  }
+
+  .video-wrapper {
+    padding: 5px;
+  }
+}
