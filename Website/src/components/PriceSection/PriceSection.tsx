@@ -14,7 +14,7 @@ const prizes: Prize[] = [
   { name: "2nd Prize", image: img2 },
   { name: "3rd Prize", image: img3 },
   {
-    name: "Miss. Xelerate",
+    name: "Ms. Xelerate",
 
     image: img4,
   },
