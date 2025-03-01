@@ -14,13 +14,13 @@ const prizes: Prize[] = [
   { name: "2nd Prize", image: img2 },
   { name: "3rd Prize", image: img3 },
   {
-    name: "Ms. Xelerate",
+    name: "Ms.Xelerators",
 
     image: img4,
   },
-  { name: "Mr. Xelerate", image: img4 },
-  { name: "Zenith Xelerate", image: img4 },
-  { name: "Xelerates-(For 10 Members)", image: img4 },
+  { name: "Mr.Xelerators", image: img4 },
+  { name: "ZenithXelerators", image: img4 },
+  { name: "Xelerators-(For 10 Members)", image: img4 },
 ];
 
 const PrizeSection: React.FC = () => {
