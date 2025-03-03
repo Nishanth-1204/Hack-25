@@ -3,24 +3,46 @@ import Horizontalscroll from "../../components/HorizontalScroll/HorizontalScroll
 import Schedule from "../Schedule/Schedule.tsx";
 import Countdown from "../../components/Countdown/Countdown.tsx";
 import PrizeSection from "../../components/PriceSection/PriceSection.tsx";
-import "./Home.css";
-
 import FAQSection from "../../components/faq/FAQsection.tsx";
 import SponsorSection from "../../components/SponsorSection/SponsorSection.tsx";
+import "./Home.css";
 
 const Home = () => {
+  useEffect(() => {
+    const disableRightClick = (e: MouseEvent) => e.preventDefault();
+  
+    document.querySelectorAll("video, iframe").forEach((element) => {
+      (element as HTMLElement).addEventListener("contextmenu", disableRightClick);
+    });
+  
+    return () => {
+      document.querySelectorAll("video, iframe").forEach((element) => {
+        (element as HTMLElement).removeEventListener("contextmenu", disableRightClick);
+      });
+    };
+  }, []);
+  
 
   return (
     <>
       <div className="container">
         <section id="home" className="vidcontainer">
-          <video autoPlay muted loop className="vid1" width="640" playsInline>
+          <video
+            autoPlay
+            muted
+            loop
+            className="vid1"
+            width="640"
+            playsInline
+            onContextMenu={(e) => e.preventDefault()}
+          >
             <source src="/vid1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <h1 className="title">HackXelerate'25</h1>
           <h1 className="subtitle">A National Level Technical Hackathon</h1>
         </section>
+
         <section id="countdown" className="count">
           <Countdown />
           <div className="home-div-container">
@@ -50,28 +72,56 @@ const Home = () => {
             </a>
           </div>
         </section>
+
         <section id="schedule">
           <Schedule />
         </section>
+
         <section id="prizes">
           <PrizeSection />
         </section>
+
         {/* Current Gallery Section */}
         <section id="current-gallery" className="mini-tv-section">
           <h1 className="gallery-title">Current Gallery</h1>
-          <div className="video-wrapper">
-            <div className="glowing-box">
-              <iframe
-                className="responsive-video"
-                src="https://www.youtube.com/embed/0eHbbyfVRk4?si=UQRTcH9KGx8ROsgT&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen>
-              </iframe>
+          <div className="video-container">
+            {/* Main Video */}
+            <div className="video-wrapper">
+              <div className="glowing-box">
+                <iframe
+                  className="responsive-video"
+                  src="https://www.youtube.com/embed/0eHbbyfVRk4?si=UQRTcH9KGx8ROsgT&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  onContextMenu={(e) => e.preventDefault()}
+                ></iframe>
+              </div>
+              <div className="poster-title">
+                <h4>Title REVEAL</h4>
+              </div>
+            </div>
+
+            {/* YouTube Shorts/Reels */}
+            <div className="video-wrapper">
+              <div className="reels-container glow">
+                <iframe
+                  className="reels-video"
+                  src="https://www.youtube.com/embed/hqtrAN3iNVY"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  onContextMenu={(e) => e.preventDefault()}
+                ></iframe>
+              </div>
+              <div className="poster-title">
+                <h4>POSTER REVEAL</h4>
+              </div>
             </div>
           </div>
         </section>
+
+        {/* Past Gallery */}
         <section id="gallery" className="mini-tv-section">
           <h1 className="gallery-title">Past Gallery</h1>
           <div className="mini-tv-container">
@@ -83,9 +133,10 @@ const Home = () => {
                   muted
                   loop
                   playsInline
-                  width={"100%"}
+                  width="100%"
+                  onContextMenu={(e) => e.preventDefault()}
                 >
-                  <source src={"/video.mp4"} type="video/mp4" />
+                  <source src="/video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -94,10 +145,12 @@ const Home = () => {
             <Horizontalscroll />
           </div>
         </section>
+
         <section>
           <h1 className="sponsor-title">Our Honoured Sponsors</h1>
           <SponsorSection />
         </section>
+
         <section id="faq">
           <FAQSection />
         </section>

@@ -399,11 +399,98 @@
   }
 }
 
-/* any mobile and tablet and ipad website optimization code Begining */
+/* Video wrapper */
+.video-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-/* Default styles (for larger screens) */
+/* Container for videos */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Responsive YouTube Shorts/Reels */
+.reels-container {
+  width: 30%;
+  max-width: 320px; /* Limit width */
+  height: auto;
+  aspect-ratio: 9 / 16; /* Maintain vertical video aspect ratio */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.glow {
+  box-shadow: 0px 0px 20px #ffd43b  ;
+  transition: all 0.3s ease-in-out;
+}
+.reels-container iframe {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 9 / 16; /* Ensures it stays in correct format */
+  object-fit: cover;
+  border: none;
+}
+
+/* 🔥 Poster title */
+.poster-title {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.poster-title h4 {
+  color: #ffd43b;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 10px #ffd43b, 0px 0px 20px #ffd43b;
+}
+
+@media (max-width: 768px) { /* Mobile */
+  .video-container {
+    flex-direction: column; /* Stack videos vertically */
+  }
+
+  .poster-title {
+    order: 1; /* Move title below video */
+  }
+
+  .reels-container {
+    width: 90%;
+    max-width: 320px;
+    aspect-ratio: 9 / 16;
+  }
+
+  .poster-title h4 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) { /* Small Phones */
+  .reels-container {
+    width: 90%;
+    max-width: 320px;
+    aspect-ratio: 9 / 16;
+  }
+  .poster-title h4 {
+    font-size: 14px;
+  }
+}
+
+/* any mobile and tablet and ipad website optimization code Begining */
 .title {
-  font-size: clamp(3.5rem, 7vw, 6rem); /* Large title */
+  font-size: clamp(3.5rem, 7vw, 6rem);
   font-weight: bold;
   text-align: center;
   text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
@@ -414,15 +501,12 @@
   justify-content: center;
   align-items: center;
 }
-
 .subtitle {
-  font-size: clamp(2rem, 5vw, 3rem); /* Medium subtitle */
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 600;
   text-align: center;
   margin-top: 10px;
 }
-
-/* Tablets and iPads */
 @media (max-width: 1024px) {
   .title {
     font-size: clamp(3rem, 6vw, 5rem);
@@ -430,7 +514,6 @@
     text-align: center;
     max-width: 100%;
   }
-
   .subtitle {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     white-space: nowrap;
@@ -438,8 +521,6 @@
     max-width: 100%;
   }
 }
-
-/* Smaller tablets */
 @media (max-width: 768px) {
   .title {
     font-size: clamp(2.8rem, 7vw, 4.5rem);
@@ -447,7 +528,6 @@
     text-align: center;
     max-width: 100%;
   }
-
   .subtitle {
     font-size: clamp(1.5rem, 4vw, 2.2rem);
     white-space: nowrap;
@@ -455,16 +535,13 @@
     max-width: 100%;
   }
 }
-/* Mobile phones */
 @media (max-width: 480px) {
-  
   .title {
     font-size: clamp(2.5rem, 8vw, 4rem);
     white-space: nowrap;
     text-align: center;
     max-width: 100%;   
   }
-
   .subtitle {
     font-size: clamp(1.2rem, 4.5vw, 2rem);
     white-space: nowrap;
