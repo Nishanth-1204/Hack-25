@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Horizontalscroll from "../../components/HorizontalScroll/HorizontalScroll.tsx";
 import Schedule from "../Schedule/Schedule.tsx";
 import Countdown from "../../components/Countdown/Countdown.tsx";
@@ -8,6 +9,18 @@ import FAQSection from "../../components/faq/FAQsection.tsx";
 import SponsorSection from "../../components/SponsorSection/SponsorSection.tsx";
 
 const Home = () => {
+  useEffect(() => {
+    const disableRightClick = (event: MouseEvent) => {
+      event.preventDefault();
+    };
+
+    document.addEventListener("contextmenu", disableRightClick);
+
+    return () => {
+      document.removeEventListener("contextmenu", disableRightClick);
+    };
+  }, []);
+
   return (
     <>
       <div className="container">
@@ -103,4 +116,5 @@ const Home = () => {
     </>
   );
 };
+
 export default Home;
