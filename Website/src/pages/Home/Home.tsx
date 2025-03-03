@@ -9,17 +9,6 @@ import FAQSection from "../../components/faq/FAQsection.tsx";
 import SponsorSection from "../../components/SponsorSection/SponsorSection.tsx";
 
 const Home = () => {
-  useEffect(() => {
-    const disableRightClick = (event: MouseEvent) => {
-      event.preventDefault();
-    };
-
-    document.addEventListener("contextmenu", disableRightClick);
-
-    return () => {
-      document.removeEventListener("contextmenu", disableRightClick);
-    };
-  }, []);
 
   return (
     <>
