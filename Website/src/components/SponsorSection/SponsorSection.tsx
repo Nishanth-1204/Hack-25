@@ -7,6 +7,8 @@ const SponsorSection = () => {
     "/Reccsar.jpg",
     "/S2S.jpg",
     "/xyz.png",
+    "/onedata.jpg",
+    "SIUK.jpg",
   ];
 
   return (
