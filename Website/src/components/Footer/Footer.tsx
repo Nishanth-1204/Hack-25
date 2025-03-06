@@ -54,7 +54,7 @@ export const Footer = () => {
               <div className="contacts">
                 <h3>Priyadharshini I</h3>
                 <span>
-                  <a href="mailto:23cb034@kpriet.ac.in">22cb013@kpriet.ac.in</a>
+                  <a href="mailto:23cb034@kpriet.ac.in">23cb034@kpriet.ac.in</a>
                 </span>
                 <p>+91 9677901869</p>
               </div>
