@@ -407,7 +407,6 @@
   justify-content: center;
 }
 
-/* Container for videos */
 .video-container {
   display: flex;
   justify-content: center;
@@ -418,9 +417,9 @@
 /* Responsive YouTube Shorts/Reels */
 .reels-container {
   width: 30%;
-  max-width: 320px; /* Limit width */
+  max-width: 320px;
   height: auto;
-  aspect-ratio: 9 / 16; /* Maintain vertical video aspect ratio */
+  aspect-ratio: 9 / 16;
   position: relative;
   display: flex;
   align-items: center;
@@ -440,40 +439,14 @@
   border: none;
 }
 
-/* 🔥 Poster title */
-.poster-title {
-  margin-top: 15px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.poster-title h4 {
-  color: #ffd43b;
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0px 0px 10px #ffd43b, 0px 0px 20px #ffd43b;
-}
-
 @media (max-width: 768px) { /* Mobile */
   .video-container {
     flex-direction: column; /* Stack videos vertically */
   }
-
-  .poster-title {
-    order: 1; /* Move title below video */
-  }
-
   .reels-container {
     width: 90%;
     max-width: 320px;
     aspect-ratio: 9 / 16;
-  }
-
-  .poster-title h4 {
-    font-size: 16px;
   }
 }
 
@@ -482,9 +455,6 @@
     width: 90%;
     max-width: 320px;
     aspect-ratio: 9 / 16;
-  }
-  .poster-title h4 {
-    font-size: 14px;
   }
 }
 
