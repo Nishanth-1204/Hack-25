@@ -92,14 +92,10 @@ const Home = () => {
                   className="responsive-video"
                   src="https://www.youtube.com/embed/0eHbbyfVRk4?si=UQRTcH9KGx8ROsgT&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3"
                   title="YouTube video player"
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   onContextMenu={(e) => e.preventDefault()}
                 ></iframe>
-              </div>
-              <div className="poster-title">
-                <h4>Title REVEAL</h4>
               </div>
             </div>
 
@@ -113,9 +109,6 @@ const Home = () => {
                   allowFullScreen
                   onContextMenu={(e) => e.preventDefault()}
                 ></iframe>
-              </div>
-              <div className="poster-title">
-                <h4>POSTER REVEAL</h4>
               </div>
             </div>
           </div>
